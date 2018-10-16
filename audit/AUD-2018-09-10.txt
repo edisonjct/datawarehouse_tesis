@@ -1,0 +1,9 @@
+FECHA: 2018-09-10 10:51:46 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-09-10 10:51:45', 'echulde', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+
+FECHA: 2018-09-10 10:54:20 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-09-10 10:54:20', 'echulde', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+
+FECHA: 2018-09-10 10:55:29 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-09-10 10:55:29', 'echulde', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+

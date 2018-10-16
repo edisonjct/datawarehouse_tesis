@@ -1,0 +1,96 @@
+FECHA: 2018-08-22 01:19:54 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-22 01:19:54', 'prueba', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+
+FECHA: 2018-08-22 01:56:05 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-22 01:56:05', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-22 01:58:16 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-22 01:58:16', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-22 02:07:10 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-22 02:07:10', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-22 10:41:00 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-22 10:41:00', 'prueba', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+
+FECHA: 2018-08-22 10:45:12 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-22 10:45:12', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-22 12:31:21 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-22 12:31:21', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-22 14:35:40 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-22 14:35:40', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-22 15:20:27 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-22 15:20:27', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-22 15:21:18 El usuario Fabricio Lozada ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-22 15:21:18', 'flozada', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-22 15:35:36 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-22 15:35:36', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-22 20:42:30 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores) VALUES ('MAYTE CHULDE', 'mchulde', '827ccb0eea8a706c4c34a16891f84e7b', '1', 'mayte@datawarehouse.com', '2018-08-22 20:42:30', 'S')
+
+FECHA: 2018-08-22 20:49:46 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores) VALUES ('PRUEBA', 'prueba2', '827ccb0eea8a706c4c34a16891f84e7b', '1', '', '2018-08-22 20:49:46', 'N')
+
+FECHA: 2018-08-22 21:31:09 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-22 21:31:09', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-22 22:04:26 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET nombre='ELIANA CORAL', usuario='ecoralita', ID_PERFIL='1', correo='correo@datawarehouse.com', fechaMod='2018-08-22 22:04:26', ver_valores='', estado='1' WHERE (ID_USUARIO='5') LIMIT 1;
+
+FECHA: 2018-08-22 22:04:54 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET nombre='ELIANA CORAL', usuario='ecoralita', ID_PERFIL='1', correo='correo@datawarehouse.com', fechaMod='2018-08-22 22:04:54', ver_valores='', estado='2' WHERE (ID_USUARIO='5') LIMIT 1;
+
+FECHA: 2018-08-22 22:05:22 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET nombre='ELIANA CORAL', usuario='ecoralita', ID_PERFIL='1', correo='correo@datawarehouse.com', fechaMod='2018-08-22 22:05:22', ver_valores='S', estado='1' WHERE (ID_USUARIO='5') LIMIT 1;
+
+FECHA: 2018-08-22 22:05:33 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET nombre='ELIANA CORAL', usuario='ecoralita', ID_PERFIL='1', correo='correo@datawarehouse.com', fechaMod='2018-08-22 22:05:33', ver_valores='N', estado='1' WHERE (ID_USUARIO='5') LIMIT 1;
+
+FECHA: 2018-08-22 22:13:22 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET estado='9' WHERE (ID_USUARIO='5') LIMIT 1;
+
+FECHA: 2018-08-22 22:14:05 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET estado='9' WHERE (ID_USUARIO='5') LIMIT 1;
+
+FECHA: 2018-08-22 22:14:58 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET nombre='MAYTE CHULDE', usuario='mchulde', ID_PERFIL='2', correo='mayte@datawarehouse.com', fechaMod='2018-08-22 22:14:58', ver_valores='S', estado='1' WHERE (ID_USUARIO='4') LIMIT 1;
+
+FECHA: 2018-08-22 23:11:22 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_perfil (nombre) VALUES ('PRUEBA')
+
+FECHA: 2018-08-22 23:22:06 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_perfil (nombre) VALUES ('PRUEBA2')
+
+FECHA: 2018-08-22 23:22:33 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_perfil (nombre) VALUES ('PRUEBA3')
+
+FECHA: 2018-08-22 23:28:54 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_perfil SET nombre='PRUEBA3222', estado='1' WHERE (ID_PERFIL='5') LIMIT 1;
+
+FECHA: 2018-08-22 23:29:15 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_perfil SET nombre='PRU', estado='2' WHERE (ID_PERFIL='5') LIMIT 1;
+
+FECHA: 2018-08-22 23:31:37 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_perfil SET estado='9' WHERE (ID_PERFIL='5') LIMIT 1;
+
+FECHA: 2018-08-22 23:31:47 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_perfil SET estado='9' WHERE (ID_PERFIL='5') LIMIT 1;
+
+FECHA: 2018-08-22 23:32:44 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_perfil SET estado='9' WHERE (ID_PERFIL='5') LIMIT 1;
+
+FECHA: 2018-08-22 23:39:02 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_perfil SET estado='9' WHERE (ID_PERFIL='4') LIMIT 1;
+
+FECHA: 2018-08-22 23:39:32 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_perfil SET nombre='PRUEBA', estado='2' WHERE (ID_PERFIL='3') LIMIT 1;
+
+FECHA: 2018-08-22 23:39:56 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_perfil (nombre) VALUES ('PRUEBAAAAAA')
+

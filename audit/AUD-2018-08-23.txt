@@ -1,0 +1,132 @@
+FECHA: 2018-08-23 01:03:30 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('6', '15');
+
+FECHA: 2018-08-23 01:04:35 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-23 01:04:35', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-23 01:17:59 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('6', '15');
+
+FECHA: 2018-08-23 01:18:26 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('6', '14');
+
+FECHA: 2018-08-23 01:18:55 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '15');
+
+FECHA: 2018-08-23 01:19:02 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('6', '13');
+
+FECHA: 2018-08-23 01:19:08 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('6', '12');
+
+FECHA: 2018-08-23 01:19:14 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('6', '11');
+
+FECHA: 2018-08-23 01:24:42 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('6', '15');
+
+FECHA: 2018-08-23 01:26:06 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_permisos WHERE (ID_PERFIL='1') AND (ID_MENU='14');
+
+FECHA: 2018-08-23 01:27:05 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '14');
+
+FECHA: 2018-08-23 01:27:08 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_permisos WHERE (ID_PERFIL='1') AND (ID_MENU='14');
+
+FECHA: 2018-08-23 01:27:12 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '15');
+
+FECHA: 2018-08-23 01:28:13 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '14');
+
+FECHA: 2018-08-23 01:28:22 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_permisos WHERE (ID_PERFIL='1') AND (ID_MENU='14');
+
+FECHA: 2018-08-23 01:28:47 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '14');
+
+FECHA: 2018-08-23 01:28:51 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_permisos WHERE (ID_PERFIL='1') AND (ID_MENU='14');
+
+FECHA: 2018-08-23 01:28:53 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '14');
+
+FECHA: 2018-08-23 01:29:16 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_perfil SET estado='9' WHERE (ID_PERFIL='6') LIMIT 1;
+
+FECHA: 2018-08-23 01:29:35 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('2', '15');
+
+FECHA: 2018-08-23 01:29:38 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('2', '14');
+
+FECHA: 2018-08-23 01:29:49 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('2', '1');
+
+FECHA: 2018-08-23 01:29:54 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('2', '2');
+
+FECHA: 2018-08-23 01:30:14 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_permisos WHERE (ID_PERFIL='2') AND (ID_MENU='14');
+
+FECHA: 2018-08-23 01:30:15 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_permisos WHERE (ID_PERFIL='2') AND (ID_MENU='15');
+
+FECHA: 2018-08-23 01:33:23 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET nombre='Fabricio Lozada', usuario='flozada', ID_PERFIL='2', correo='flozada@datawarehouse.com', fechaMod='2018-08-23 01:33:23', ver_valores='N', estado='1' WHERE (ID_USUARIO='2') LIMIT 1;
+
+FECHA: 2018-08-23 01:33:37 El usuario Fabricio Lozada ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-23 01:33:37', 'flozada', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-23 01:43:20 El usuario Fabricio Lozada ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-23 01:43:20', 'flozada', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-23 01:53:22 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-23 01:53:22', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-23 01:53:59 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_permisos WHERE (ID_PERFIL='1') AND (ID_MENU='5');
+
+FECHA: 2018-08-23 01:55:36 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '5');
+
+FECHA: 2018-08-23 01:55:54 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_permisos WHERE (ID_PERFIL='1') AND (ID_MENU='1');
+
+FECHA: 2018-08-23 01:56:57 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '1');
+
+FECHA: 2018-08-23 01:58:01 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_permisos WHERE (ID_PERFIL='1') AND (ID_MENU='1');
+
+FECHA: 2018-08-23 02:00:07 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '1');
+
+FECHA: 2018-08-23 02:00:41 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('2', '10');
+
+FECHA: 2018-08-23 02:00:44 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('2', '11');
+
+FECHA: 2018-08-23 02:00:50 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('2', '14');
+
+FECHA: 2018-08-23 02:00:56 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('2', '15');
+
+FECHA: 2018-08-23 02:01:06 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('2', '13');
+
+FECHA: 2018-08-23 02:01:39 El usuario Fabricio Lozada ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-23 02:01:39', 'flozada', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-23 02:03:04 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-23 02:03:04', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-23 17:42:21 El usuario Fabricio Lozada ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-23 17:42:21', 'flozada', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-23 22:00:07 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-23 22:00:07', 'prueba', '::1', 'Google Chrome','Windows 7');
+

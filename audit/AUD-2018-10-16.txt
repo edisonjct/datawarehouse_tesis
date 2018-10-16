@@ -1,0 +1,9 @@
+FECHA: 2018-10-16 16:54:03 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-16 16:54:02', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-16 17:34:56 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET nombre='Fabricio Lozada', usuario='flozada', ID_PERFIL='2', correo='flozada@datawarehouse.com.ec', fechaMod='2018-10-16 17:34:56', ver_valores='N', estado='1' WHERE (ID_USUARIO='2') LIMIT 1;
+
+FECHA: 2018-10-16 17:54:18 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-16 17:54:18', 'echulde', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+

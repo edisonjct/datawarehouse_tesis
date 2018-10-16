@@ -1,0 +1,15 @@
+FECHA: 2018-08-21 00:26:46 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-21 00:26:46', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-21 00:44:11 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-21 00:44:11', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-21 21:01:11 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-21 21:01:11', 'prueba', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-08-21 22:10:24 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-21 22:10:24', 'prueba', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+
+FECHA: 2018-08-21 22:37:43 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-08-21 22:37:43', 'prueba', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+
