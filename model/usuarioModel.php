@@ -68,8 +68,8 @@ class usuarioModel extends Modelo {
         return $array;
     }
 
-    public function add_usuario($nombre, $usuario, $clave, $tipo, $correo, $costos, $fecha_actual) {
-        $query = "INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores) VALUES ('$nombre', '$usuario', '$clave', '$tipo', '$correo', '$fecha_actual', '$costos')";
+    public function add_usuario($nombre, $usuario, $clave, $tipo, $correo, $costos, $fecha_actual, $estado) {
+        $query = "INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores,estado) VALUES ('$nombre', '$usuario', '$clave', '$tipo', '$correo', '$fecha_actual', '$costos', '$estado')";
         ocon($query);
         $result = $this->db->query($query);
         return $result;
@@ -147,6 +147,48 @@ class usuarioModel extends Modelo {
 
     public function eliminar_permiso($ID_PERFIL, $ID_MENU) {
         $query = "DELETE FROM dw_permisos WHERE (ID_PERFIL='$ID_PERFIL') AND (ID_MENU='$ID_MENU');";
+        ocon($query);
+        $result = $this->db->query($query);
+        return $result;
+    }
+
+    public function url_base_activation() {
+        $query = "SELECT * FROM dw_configuraciones WHERE numtabla = '03' LIMIT 1;";
+        ocon($query);
+        $result = $this->db->query($query);
+        return $result->fetch_object();
+    }
+
+    public function url_base() {
+        $query = "SELECT * FROM dw_configuraciones WHERE numtabla = '04' LIMIT 1;";
+        ocon($query);
+        $result = $this->db->query($query);
+        return $result->fetch_object();
+    }
+
+    public function max_user() {
+        $query = "SELECT max(ID_USUARIO) as max FROM dw_usuario LIMIT 1;";
+        ocon($query);
+        $result = $this->db->query($query);
+        return $result->fetch_object();
+    }
+
+    public function validate_activation_user($id, $hash, $estado) {
+        $query = "SELECT * FROM dw_usuario WHERE estado = '$estado' AND ID_USUARIO = '$id' AND clave = '$hash' LIMIT 1;";
+        ocon($query);
+        $result = $this->db->query($query);
+        return $result->fetch_object();
+    }
+
+    public function activate_user($ID_PERFIL) {
+        $query = "UPDATE dw_usuario SET estado='1' WHERE (ID_USUARIO='$ID_PERFIL') LIMIT 1;";
+        ocon($query);
+        $result = $this->db->query($query);
+        return $result;
+    }
+
+    public function update_password($ID_USUARIO, $pass, $estado, $fecha_actual) {
+        $query = "UPDATE dw_usuario SET clave='$pass', fechaMod='$fecha_actual', estado='$estado' WHERE (ID_USUARIO='$ID_USUARIO') LIMIT 1;";
         ocon($query);
         $result = $this->db->query($query);
         return $result;

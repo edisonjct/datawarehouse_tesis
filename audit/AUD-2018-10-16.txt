@@ -7,3 +7,39 @@ UPDATE dw_usuario SET nombre='Fabricio Lozada', usuario='flozada', ID_PERFIL='2'
 FECHA: 2018-10-16 17:54:18 El usuario EDISON CHULDE ejecuto:
 INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-16 17:54:18', 'echulde', '127.0.0.1', 'Mozilla Firefox','Windows 7');
 
+FECHA: 2018-10-16 18:28:10 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-16 18:28:10', 'echulde', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+
+FECHA: 2018-10-16 21:29:31 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-16 21:29:31', 'echulde', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+
+FECHA: 2018-10-16 21:48:06 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-16 21:48:06', 'echulde', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+
+FECHA: 2018-10-16 21:57:37 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-16 21:57:37', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-16 22:14:22 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-16 22:14:22', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-16 22:47:38 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores) VALUES ('Edison Javier Chulde', 'edison', '5022bb50a0197930935e45afc4ccc375', '1', 'edisonjct@gmail.com', '2018-10-16 22:47:36', 'S')
+
+FECHA: 2018-10-16 22:54:58 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores) VALUES ('Edison', 'edchulde', '25f9e794323b453885f5181f1b624d0b', '1', 'edisonjct@gmail.com', '2018-10-16 22:54:57', 'S')
+
+FECHA: 2018-10-16 22:59:51 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores) VALUES ('AASDAS', 'AAAAAAAAA', '3dbe00a167653a1aaee01d93e77e730e', '1', 'edisonjct@gmail.com', '2018-10-16 22:59:51', 'S')
+
+FECHA: 2018-10-16 23:20:30 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores) VALUES ('pruebaf', 'pppppp', 'c893bad68927b457dbed39460e6afd62', '1', 'edisonjct@gmail.com', '2018-10-16 23:20:29', 'S')
+
+FECHA: 2018-10-16 23:23:23 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores) VALUES ('prueba', 'prueba', 'e10adc3949ba59abbe56e057f20f883e', '1', 'edisonjct@gmail.com', '2018-10-16 23:23:23', 'S')
+
+FECHA: 2018-10-16 23:47:08 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores) VALUES ('12', '12', 'c20ad4d76fe97759aa27a0c99bff6710', '1', 'edisonjct@gmail.com', '2018-10-16 23:47:06', 'S')
+
+FECHA: 2018-10-16 23:50:17 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores) VALUES ('13', '13', 'c51ce410c124a10e0db5e4b97fc2af39', '1', 'edisonjct@gmail.com', '2018-10-16 23:50:16', 'S')
+

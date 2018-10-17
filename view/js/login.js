@@ -5,7 +5,8 @@
  */
 $(document).on('ready', function () {
     $('#btn-ingresar').click(function () {
-        $('#resp').html('<div align="center"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i></div>');
+        $('#btn-ingresar').attr('disabled', 'disabled').prepend('<i class="fa fa-refresh fa-spin"></i>  ');
+        //$('#resp').html('<div align="center"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i></div>');
         var url = "controler/loginControler.php";
         $.ajax({
             type: "POST",
@@ -17,8 +18,13 @@ $(document).on('ready', function () {
                     window.location.href = 'view/index';
                 } else {
                     swal("¡Error!", "Usuario y Contraseña Incorectas", "error");
-                    $('#resp').html('');
+                    $('#usuario').val('');
+                    $('#password').val('');                    
+                    //$('#resp').html('');
                 }
+            },
+            complete: function () {
+                $('#btn-ingresar').removeAttr('disabled').find('i.fa').remove();
             }
         });
     });

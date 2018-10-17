@@ -65,16 +65,27 @@ $perfiles = $usuarioModel->tabla_perfil_all();
                                         <? if ($perfiles) { ?>
                                             <table id="table-perfil" class="table table-striped table-bordered table-hover table-condensed dt-responsive dataTable no-footer dtr-inline" cellspacing="0" width="100%" role="grid" aria-describedby="datatable-responsive_info" style="width: 100%;">
                                                 <thead>
-                                                    <tr>                                                        
+                                                    <tr>
+                                                        <th></th>                                                        
                                                         <th>ID</th>
                                                         <th>PERFIL</th>
-                                                        <th>ESTADO</th>                                                        
-                                                        <th></th>
+                                                        <th>ESTADO</th>                                               
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <? foreach ($perfiles as $row) { ?>
                                                         <tr>
+                                                            <td>
+                                                                <div class="btn-group">
+                                                                    <button data-toggle="dropdown" class="btn btn-dark dropdown-toggle btn-xs" type="button"><span class="fa fa-cogs"> <span class="caret"></span></span></button>
+                                                                    <ul role="menu" class="dropdown-menu">
+                                                                        <li><a onclick="mostrar_permisos('<?= $row->ID_PERFIL; ?>');"><span class="glyphicon glyphicon-pencil"></span> Editar Permisos</a></li>
+                                                                        <li class="divider"></li>
+                                                                        <li><a onclick="mostrar_perfil('<?= $row->ID_PERFIL; ?>');"><span class="glyphicon glyphicon-pencil"></span> Editar Perfil</a></li>
+                                                                        <li><a onclick="eliminar_perfil('<?= $row->ID_PERFIL; ?>');"><span class="glyphicon glyphicon-remove"></span> Eliminar Perfil</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
                                                             <td><?= $row->ID_PERFIL; ?></td>
                                                             <td><?= $row->nombre; ?></td>                                                            
                                                             <td>
@@ -85,19 +96,7 @@ $perfiles = $usuarioModel->tabla_perfil_all();
                                                                 <? } else if ($row->estado == '3') { ?>
                                                                     <span class="label label-danger">Bloqueado</span>
                                                                 <? } ?>
-                                                            </td>                                                            
-                                                            <td>
-                                                                <div class="btn-group">
-                                                                    <button data-toggle="dropdown" class="btn btn-dark dropdown-toggle btn-xs" type="button">Option <span class="caret"></span></button>
-                                                                    <ul role="menu" class="dropdown-menu">
-                                                                        <li><a onclick="mostrar_permisos('<?= $row->ID_PERFIL; ?>');"><span class="glyphicon glyphicon-pencil"></span> Editar Permisos</a></li>
-                                                                        <li class="divider"></li>
-                                                                        <li><a onclick="mostrar_perfil('<?= $row->ID_PERFIL; ?>');"><span class="glyphicon glyphicon-pencil"></span> Editar Perfil</a></li>
-                                                                        <li><a onclick="eliminar_perfil('<?= $row->ID_PERFIL; ?>');"><span class="glyphicon glyphicon-remove"></span> Eliminar Perfil</a></li>
-                                                                    </ul>
-                                                                </div>
-
-                                                            </td>
+                                                            </td>                                                                                                                        
                                                         </tr>
                                                     <? } ?>
                                                 </tbody>

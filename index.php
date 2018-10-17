@@ -32,10 +32,10 @@
                         <form method="post" id="formulario">
                             <h1>Iniciar Sesion</h1>
                             <div>
-                                <input type="text" class="form-control" placeholder="Username" required="" name="usuario"/>
+                                <input type="text" class="form-control" placeholder="Username" required="" id="usuario" name="usuario"/>
                             </div>
                             <div>
-                                <input type="password" class="form-control" placeholder="Password" required="" name="password"  />
+                                <input type="password" class="form-control" placeholder="Password" required="" id="password" name="password"  />
                             </div>
                             <div>
                                 <button class="btn btn-default submit" type="button" id="btn-ingresar">Iniciar</button>

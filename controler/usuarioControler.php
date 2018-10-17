@@ -96,20 +96,154 @@ switch ($_POST['proceso']) {
         $tipo = $_POST['tipo'];
         $correo = $_POST['correo'];
         $costos = $_POST['costos'];
-        $add_usuario = $usuarioModel->add_usuario($nombre, $usuario, md5($clave), $tipo, $correo, $costos, $fecha_actual);
-        if ($add_usuario) {
-            ?>
-            <script>
-                swal("¡Exito!", "Usuario Ingresado Con Exito", "success");
-                setTimeout("cargar_usuarios();", 1000);
-            </script>
-            <?
+        $url_base = $usuarioModel->url_base_activation();
+        $max_user = $usuarioModel->max_user();
+        $max_id = $max_user->max + 1;
+        require '../view/vendors/PHPMailer/PHPMailerAutoload.php';
+        $mail = new PHPMailer;
+        $mail->isSMTP();
+        $mail->SMTPDebug = 0;
+        $mail->Debugoutput = 'html';
+        $mail->Host = "mail.mrbooks.com";
+        $mail->Port = 26;
+        $mail->SMTPAuth = true;
+        $mail->Username = "agenda";
+        $mail->Password = "GNdvntsÑ2410";
+        $mail->setFrom('agenda@mrbooks.com', 'Data Warehouse Mr Books');
+        $mail->addReplyTo('edisonjct@gmail.com', 'Edison Chulde');
+        $mail->addAddress($correo, $nombre);
+        $mail->Subject = 'ACTIVACION DE USUARIO';
+        $body = '';
+        $body .= '<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">        
+        <title>MR BOOKS</title>    
+    </head>';
+
+        $body .= "<style>datagrid table { border-collapse: collapse; text-align: left; width: 100%; } .datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #997011; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }.datagrid table td, .datagrid table th { padding: 3px 10px; }.datagrid table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #DE8723), color-stop(1, #DE8723) );background:-moz-linear-gradient( center top, #DE8723 5%, #DE8723 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#DE8723', endColorstr='#DE8723');background-color:#DE8723; color:#FFFFFF; font-size: 15px; font-weight: bold; border-left: 1px solid #A8995C; } .datagrid table thead th:first-child { border: none; }.datagrid table tbody td { color: #00496B; border-left: 1px solid #A8995C;font-size: 12px;font-weight: normal; }.datagrid table tbody .alt td { background: #F4E3AB; color: #00496B; }.datagrid table tbody td:first-child { border-left: none; }.datagrid table tbody tr:last-child td { border-bottom: none; }.datagrid table tfoot td div { border-top: 1px solid #997011;background: #E1EEF4;} .datagrid table tfoot td { padding: 0; font-size: 12px } .datagrid table tfoot td div{ padding: 2px; }.datagrid table tfoot td ul { margin: 0; padding:0; list-style: none; text-align: right; }.datagrid table tfoot  li { display: inline; }.datagrid table tfoot li a { text-decoration: none; display: inline-block;  padding: 2px 8px; margin: 1px;color: #FFFFFF;border: 1px solid #DE8723;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #DE8723), color-stop(1, #DE8723) );background:-moz-linear-gradient( center top, #DE8723 5%, #DE8723 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#DE8723', endColorstr='#DE8723');background-color:#DE8723; }.datagrid table tfoot ul.active, .datagrid table tfoot ul a:hover { text-decoration: none;border-color: #DE8723; color: #FFFFFF; background: none; background-color:#DE8723;}div.dhtmlx_window_active, div.dhx_modal_cover_dv { position: fixed !important; }</style>";
+        $body .= '<body>
+        <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">            
+            <tr>
+                <td align="center" valign="top" bgcolor="#f1f69d" style="background-color:#ffffe6; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#000000; padding:10px;">
+                    <div style="font-family:Times New Roman; font-size:25px; color:#000000;">ACTIVACION DEL USUARIO: ' . $usuario . '</div>                   
+                    <hr>
+                    Para activar su usuario ingrese a la siguiente url <br>
+                    <a href="' . $url_base->nomtabla . md5($clave) . '&i=' . $max_id . '&p=a">Click Aqui para Activar su usuario</a>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" bgcolor="#ffa64d" style="background-color:#ffa64d;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="15">
+                        <tr>
+                            <td align="left" valign="top" style="color:#ffffff; font-family:Arial, Helvetica, sans-serif; font-size:13px;">Mr Books<br>
+                                Mr Books @ Power By Edison Chulde<br>
+                                Telefono: 0993729268 <br>
+                                Correo: <a href="mailto:edisonjct@gmail.com" style="color:#ffffff; text-decoration:none;">edisonjct@gmail.com </a><br>
+                                Website: <a href="http://www.mrbooks.com" target="_blank" style="color:#ffffff; text-decoration:none;">www.mrbooks.com</a></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>';
+        $body .= '</html>';
+        $mail->Body = $body;
+        $mail->AltBody = 'Este es un correo de prueba';
+        if (!$mail->send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
         } else {
-            ?>
-            <script>
-                swal("¡Error!", "No se ingreso consulte con el administrador", "error");
-            </script>
-            <?
+            $add_usuario = $usuarioModel->add_usuario($nombre, $usuario, md5($clave), $tipo, $correo, $costos, $fecha_actual, '8');
+            if ($add_usuario) {
+                ?>
+                <script>
+                    swal("¡Exito!", "Usuario Ingresado Con Exito", "success");
+                    setTimeout("cargar_usuarios();", 1000);
+                </script>
+                <?
+            } else {
+                ?>
+                <script>
+                    swal("¡Error!", "No se ingreso consulte con el administrador", "error");
+                </script>
+                <?
+            }
+        }
+        break;
+
+    case 'reset_password':
+        $ID_USUARIO = $_POST['id'];
+        $user = $usuarioModel->sel_usuario_by_id($ID_USUARIO);
+        $url_base = $usuarioModel->url_base_activation();
+        require '../view/vendors/PHPMailer/PHPMailerAutoload.php';
+        $mail = new PHPMailer;
+        $mail->isSMTP();
+        $mail->SMTPDebug = 0;
+        $mail->Debugoutput = 'html';
+        $mail->Host = "mail.mrbooks.com";
+        $mail->Port = 26;
+        $mail->SMTPAuth = true;
+        $mail->Username = "agenda";
+        $mail->Password = "GNdvntsÑ2410";
+        $mail->setFrom('agenda@mrbooks.com', 'Data Warehouse Mr Books');
+        $mail->addReplyTo('edisonjct@gmail.com', 'Edison Chulde');
+        $mail->addAddress($user->correo, $user->nombre);
+        $mail->Subject = 'RESETEO DE CLAVE';
+        $body = '';
+        $body .= '<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">        
+        <title>MR BOOKS</title>    
+    </head>';
+
+        $body .= "<style>datagrid table { border-collapse: collapse; text-align: left; width: 100%; } .datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #997011; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }.datagrid table td, .datagrid table th { padding: 3px 10px; }.datagrid table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #DE8723), color-stop(1, #DE8723) );background:-moz-linear-gradient( center top, #DE8723 5%, #DE8723 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#DE8723', endColorstr='#DE8723');background-color:#DE8723; color:#FFFFFF; font-size: 15px; font-weight: bold; border-left: 1px solid #A8995C; } .datagrid table thead th:first-child { border: none; }.datagrid table tbody td { color: #00496B; border-left: 1px solid #A8995C;font-size: 12px;font-weight: normal; }.datagrid table tbody .alt td { background: #F4E3AB; color: #00496B; }.datagrid table tbody td:first-child { border-left: none; }.datagrid table tbody tr:last-child td { border-bottom: none; }.datagrid table tfoot td div { border-top: 1px solid #997011;background: #E1EEF4;} .datagrid table tfoot td { padding: 0; font-size: 12px } .datagrid table tfoot td div{ padding: 2px; }.datagrid table tfoot td ul { margin: 0; padding:0; list-style: none; text-align: right; }.datagrid table tfoot  li { display: inline; }.datagrid table tfoot li a { text-decoration: none; display: inline-block;  padding: 2px 8px; margin: 1px;color: #FFFFFF;border: 1px solid #DE8723;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #DE8723), color-stop(1, #DE8723) );background:-moz-linear-gradient( center top, #DE8723 5%, #DE8723 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#DE8723', endColorstr='#DE8723');background-color:#DE8723; }.datagrid table tfoot ul.active, .datagrid table tfoot ul a:hover { text-decoration: none;border-color: #DE8723; color: #FFFFFF; background: none; background-color:#DE8723;}div.dhtmlx_window_active, div.dhx_modal_cover_dv { position: fixed !important; }</style>";
+        $body .= '<body>
+        <table width="700" border="0" align="center" cellpadding="0" cellspacing="0">            
+            <tr>
+                <td align="center" valign="top" bgcolor="#f1f69d" style="background-color:#ffffe6; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#000000; padding:10px;">
+                    <div style="font-family:Times New Roman; font-size:25px; color:#000000;">RESETEO DE CLAVE DEL USUARIO: ' . $user->usuario . '</div>                   
+                    <hr>
+                    Para cambiar su clave ingrese a la siguiente url <br>
+                    <a href="' . $url_base->nomtabla . $user->clave . '&i=' . $ID_USUARIO . '&p=r">Click Aqui para Cambiar su clave</a>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" valign="top" bgcolor="#ffa64d" style="background-color:#ffa64d;">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="15">
+                        <tr>
+                            <td align="left" valign="top" style="color:#ffffff; font-family:Arial, Helvetica, sans-serif; font-size:13px;">Mr Books<br>
+                                Mr Books @ Power By Edison Chulde<br>
+                                Telefono: 0993729268 <br>
+                                Correo: <a href="mailto:edisonjct@gmail.com" style="color:#ffffff; text-decoration:none;">edisonjct@gmail.com </a><br>
+                                Website: <a href="http://www.mrbooks.com" target="_blank" style="color:#ffffff; text-decoration:none;">www.mrbooks.com</a></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>';
+        $body .= '</html>';
+        $mail->Body = $body;
+        $mail->AltBody = 'Este es un correo de prueba';
+        if (!$mail->send()) {
+            echo "Mailer Error: " . $mail->ErrorInfo;
+        } else {
+            $update_user = $usuarioModel->update_usuario($ID_USUARIO, $user->nombre, $user->usuario, $user->ID_PERFIL, $user->correo, $fecha_actual, 8, $user->ver_valores);
+            if ($update_user) {
+                ?>
+                <script>
+                    swal("¡Exito!", "Se envio un correo para la modificacion de la clave del usuario seleccionado", "success");
+                    setTimeout("cargar_usuarios();", 1000);
+                </script>
+                <?
+            } else {
+                ?>
+                <script>
+                    swal("¡Error!", "consulte con el administrador", "error");
+                </script>
+                <?
+            }
         }
         break;
 
@@ -145,18 +279,29 @@ switch ($_POST['proceso']) {
                             <table id="table-usuarios" class="table table-striped table-bordered table-hover table-condensed dt-responsive dataTable no-footer dtr-inline" cellspacing="0" width="100%" role="grid" aria-describedby="datatable-responsive_info" style="width: 100%;">
                                 <thead>
                                     <tr>                                                        
+                                        <th></th>
                                         <th>NOMBRE</th>
                                         <th>USUARIO</th>
                                         <th>CORREO</th>                                        
                                         <th>TIPO</th>
                                         <th>ESTADO</th>
-                                        <th>FECHA</th>                                                        
-                                        <th></th>
+                                        <th>FECHA</th>                                                                                                
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <? foreach ($usuarios as $row) { ?>
                                         <tr>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button data-toggle="dropdown" class="btn btn-dark dropdown-toggle btn-xs" type="button"><span class="fa fa-cogs"> <span class="caret"></span></span></button>
+                                                    <ul role="menu" class="dropdown-menu">
+                                                        <li><a onclick="mostrar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-pencil"></span> Editar</a></li>
+                                                        <li><a onclick="mostrar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-remove"></span> Eliminar</a></li>                                                                        
+                                                        <li class="divider"></li>
+                                                        <li><a onclick="mostrar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-duplicate"></span> Resetear Clave</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
                                             <td><?= $row->nombre; ?></td>
                                             <td><?= $row->usuario; ?></td>
                                             <td><?= $row->correo; ?></td>
@@ -168,21 +313,11 @@ switch ($_POST['proceso']) {
                                                     <span class="label label-warning">Inactivo</span>
                                                 <? } else if ($row->estado == '3') { ?>
                                                     <span class="label label-danger">Bloqueado</span>
+                                                <? } else if ($row->estado == '8') { ?>
+                                                    <span class="label label-info">Por Activar</span>
                                                 <? } ?>
                                             </td>
-                                            <td><?= $row->fecha; ?></td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button data-toggle="dropdown" class="btn btn-dark dropdown-toggle btn-xs" type="button">Option <span class="caret"></span>
-                                                    </button>
-                                                    <ul role="menu" class="dropdown-menu">
-                                                        <li><a onclick="mostrar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-pencil"></span> Editar</a></li>
-                                                        <li><a onclick="mostrar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-remove"></span> Eliminar</a></li>                                                                        
-                                                        <li class="divider"></li>
-                                                        <li><a onclick="mostrar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-duplicate"></span> Resetear Clave</a></li>
-                                                    </ul>
-                                                </div>
-                                            </td>
+                                            <td><?= $row->fecha; ?></td>                                            
                                         </tr>
                                     <? } ?>
                                 </tbody>
@@ -679,5 +814,37 @@ switch ($_POST['proceso']) {
             <?
         }
         break;
-}
 
+    case 'reset_pass':
+        $ID_USUARIO = $_POST['id'];
+        $pass = $_POST['pass'];
+        $validapass = $usuarioModel->sel_usuario_by_id($ID_USUARIO);
+        //echo md5($pass) . ' <br> ' . $validapass->clave;
+        $url_base = $usuarioModel->url_base();
+        if (md5($pass) == $validapass->clave) {
+            ?>
+            <script>
+                swal("¡Error!", "Su nueva clave debe ser diferente a la anterior", "error");
+            </script>
+            <div id="result">
+                <input type="hidden" value="<?= $ID_USUARIO; ?>" id="id">
+                Nueva Clave: 
+                <input type="password" class="form-control" id="pass" placeholder="Ingrese su nueva contraseña"> <hr>
+                <button class="btn btn-success" onclick="cambiar_pass();" id="btn-cambiarp"> Cambiar </button>
+            </div>
+            <?
+        } else {
+            $update_pass = $usuarioModel->update_password($ID_USUARIO, md5($pass), 1, $fecha_actual)
+            ?>
+            <script>
+                swal("¡Exito!", "Clave cambiada Con Exito", "success");
+            </script>
+            <div class="alert alert-success alert-dismissible fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <strong>Exito!</strong> Su usuario a sido activado, Para ingresar al sistema Ingrese <a href="<?= $url_base->nomtabla ?>">aqui</a>.
+            </div>
+            <?
+        }
+
+        break;
+}
