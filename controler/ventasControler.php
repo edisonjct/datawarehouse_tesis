@@ -23,6 +23,101 @@ switch ($_POST['proceso']) {
         $hasta = $_POST['end'];
         $tipo = $_POST['tipo'];
 
+        $venta_tiendas = $cubo->datos_grafico_ventas($desde, $hasta);        
+        $array_nombre = '';
+        $array_facturas = '';
+        $array_libros = '';
+        $array_venta = '';
+        foreach ($venta_tiendas as $row) {
+            $array_nombre .= "'" . $row->bodega . "',";
+            $array_facturas .= number_format($row->facturas, 0, '', '') . ',';
+            $array_libros .= number_format($row->cantidad, 0, '', '') . ',';
+            $array_venta .= number_format($row->pvp, 0, '', '') . ',';
+        }        
+        
+        ?>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">                        
+                <div class="x_panel">                                                       
+                    <div class="x_content">
+                        <div id="main" style="height:350px;"></div>
+                    </div>
+                </div>
+            </div>                    
+        </div>
+
+
+        <script>
+            var myChart = echarts.init(document.getElementById('main'));
+            var option = {
+                title: {
+                    text: 'Grafico de Ventas',
+                    subtext: 'Grafico de Cubos'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                },
+                legend: {
+                    data: ['Facturas', 'Libros', 'Venta']
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        mark: {show: true},
+                        dataView: {show: true, readOnly: false},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+
+                xAxis: [
+                    {
+                        type: 'category',
+                        data: [<?= $array_nombre; ?>]
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value'
+                    }
+                ],
+                series: [
+                    {
+                        name: 'Facturas',
+                        type: 'bar',
+                        data: [<?= $array_facturas; ?>]
+                    },
+                    {
+                        name: 'Libros',
+                        type: 'bar',
+                        data: [<?= $array_libros; ?>]
+                    },
+                    {
+                        name: 'Venta',
+                        type: 'bar',
+                        data: [<?= $array_venta; ?>],
+                        markLine: {
+                            lineStyle: {
+                                normal: {
+                                    type: 'dashed'
+                                }
+                            },
+                            data: [
+                                [{type: 'min'}, {type: 'max'}]
+                            ]
+                        }
+                    }
+                ]
+            };
+
+
+        // use configuration item and data specified to show chart
+            myChart.setOption(option);
+        </script>
+        <?
         switch ($tipo) {
             case '0':
                 $get = $cubo->cubo_ventas_totalisado($desde, $hasta);
@@ -40,7 +135,7 @@ switch ($_POST['proceso']) {
                     $array = substr($array, 0, -1);
                     $respuesta = $array;
                 }
-                ?>
+                ?>               
                 <div id="rr" style="padding: 7px;"></div>
                 <div id="export" style="padding: 7px;"></div>
                 <script type="text/javascript">

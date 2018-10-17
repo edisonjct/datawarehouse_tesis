@@ -79,7 +79,7 @@ class cubosModel extends Modelo {
         $query = "SELECT
         CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
         fecha_ingreso,
-	(COUNT(DISTINCT documento)) as numdoc,
+	(COUNT(documento)) as numdoc,
         sum(cantidad) as cantidad,
         sum(costo) as costo,
         sum(vtabta) as vtabta,
@@ -102,9 +102,8 @@ class cubosModel extends Modelo {
         cdi        
         FROM
         data_mart_ventas
-        WHERE fecha_ingreso BETWEEN '$desde 00:00:00' AND '$hasta 23:59:59'
-        GROUP BY bodega,anio,mes,pais,tipo_provedor,cat_cliente
-        AND estado != '9';";
+        WHERE fecha_ingreso BETWEEN '$desde 00:00:00' AND '$hasta 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,pais,tipo_provedor,cat_cliente;";
         $result = $this->db->query($query);
         $array = '';
         while ($row = $result->fetch_object()) {
@@ -142,6 +141,25 @@ class cubosModel extends Modelo {
         INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
         WHERE anio = '$anio' AND estado = '1'
         ORDER BY orden ASC;";
+        $result = $this->db->query($query);
+        $array = '';
+        while ($row = $result->fetch_object()) {
+            $array[] = $row;
+        }
+        $result->free();
+        return $array;
+    }
+    
+    public function datos_grafico_ventas($desde, $hasta) {
+        $query = "SELECT
+        bodega as bodega,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '$desde 00:00:00' AND '$hasta 23:59:59' AND estado != '9'
+        GROUP BY bodega ORDER BY bodega;";
         $result = $this->db->query($query);
         $array = '';
         while ($row = $result->fetch_object()) {

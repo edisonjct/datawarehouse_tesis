@@ -55,3 +55,21 @@ INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-
 FECHA: 2018-10-17 01:54:42 El usuario EDISON CHULDE ejecuto:
 UPDATE dw_usuario SET nombre='EDISON CHULDE', usuario='echulde', ID_PERFIL='1', correo='edisonjct@gmail.com', fechaMod='2018-10-17 01:54:42', ver_valores='N', estado='1' WHERE (ID_USUARIO='1') LIMIT 1;
 
+FECHA: 2018-10-17 08:14:40 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-17 08:14:40', 'echulde', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+
+FECHA: 2018-10-17 08:15:10 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET estado='9' WHERE (ID_USUARIO='14') LIMIT 1;
+
+FECHA: 2018-10-17 11:27:15 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-17 11:27:15', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-17 12:01:29 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-17 12:01:29', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-17 12:07:18 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-17 12:07:18', 'echulde', '127.0.0.1', 'Mozilla Firefox','Windows 7');
+
+FECHA: 2018-10-17 14:03:42 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-17 14:03:42', 'echulde', '::1', 'Google Chrome','Windows 7');
+

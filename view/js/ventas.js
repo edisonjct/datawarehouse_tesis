@@ -12,7 +12,6 @@ $(document).ready(function () {
         var desde = $('#start').val();
         var hasta = $('#hasta').val();
         var tipo = $('input:radio[name=tipo]:checked').val();
-
         if (desde !== '' && hasta !== '') {
             if (tipo === '1') {
                 swal({

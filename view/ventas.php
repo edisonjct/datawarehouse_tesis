@@ -23,6 +23,7 @@ if (!$_SESSION['id']) {
         <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet"> 
         <link href="vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">                                                
         <link href="build/css/custom.min.css" rel="stylesheet">
+        <script src="js/echarts.min.js"></script>
         <style>
             .caption{padding:0px 0px !important;background:transparent !important}.caption p{margin-bottom:0px !important}
         </style>
