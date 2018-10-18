@@ -319,4 +319,11 @@ class dtsModel extends Modelo {
         return $insert_tabla;
     }
 
+    public function getdatosbyid($tabla, $codigo) {
+        $query = "SELECT * FROM dw_configuraciones WHERE numtabla = '$tabla' AND codtabla = '$codigo' AND dato1 = 1;";
+        //ocon($query);
+        $result = $this->db->query($query);
+        return $result->fetch_object();
+    }
+
 }
