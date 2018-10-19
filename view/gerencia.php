@@ -6,7 +6,7 @@
  */
 
 /**
- * Description of permisos
+ * Description of Gerencia
  *
  * @author EChulde
  */
@@ -18,7 +18,7 @@ include_once '../model/configuracionModel.php';
 include_once '../model/usuarioModel.php';
 
 $usuarioModel = new usuarioModel();
-$perfiles = $usuarioModel->tabla_perfil_all();
+$usuarios = $usuarioModel->tabla_usuarios_all();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@ $perfiles = $usuarioModel->tabla_perfil_all();
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>PERMISOS</title>                
+        <title>USUARIOS</title>                
         <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
@@ -51,64 +51,20 @@ $perfiles = $usuarioModel->tabla_perfil_all();
                 <div class="right_col" role="main">
                     <div class="">
                         <div class="clearfix"></div>
-                        <div class="row" id="datos-perfil">
+                        <div class="row" id="datos-usuario">
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="x_panel">
                                     <div class="x_title">
-                                        <h2>DATOS DE PERFIL</h2>
-                                        <ul class="nav navbar-right panel_toolbox">
-                                            <button type="button" class="btn btn-round btn-info" onclick="nuevo_perfil();" >Nuevo</button>
-                                        </ul>
+                                        <h2>REPORTES ESTADISTICOS</h2>
+                                        
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="x_content">
-                                        <? if ($perfiles) { ?>
-                                            <table id="table-perfil" class="table table-striped table-bordered table-hover table-condensed dt-responsive dataTable no-footer dtr-inline" cellspacing="0" width="100%" role="grid" aria-describedby="datatable-responsive_info" style="width: 100%;">
-                                                <thead>
-                                                    <tr>
-                                                        <th></th>
-                                                        <th>ID</th>
-                                                        <th>PERFIL</th>
-                                                        <th>ESTADO</th>                                               
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <? foreach ($perfiles as $row) { ?>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="btn-group">
-                                                                    <button data-toggle="dropdown" class="btn btn-dark dropdown-toggle btn-xs" type="button"><span class="fa fa-cogs"> <span class="caret"></span></span></button>
-                                                                    <ul role="menu" class="dropdown-menu">
-                                                                        <li><a onclick="mostrar_permisos('<?= $row->ID_PERFIL; ?>');"><span class="glyphicon glyphicon-pencil"></span> Editar Permisos</a></li>
-                                                                        <li class="divider"></li>
-                                                                        <li><a onclick="mostrar_perfil('<?= $row->ID_PERFIL; ?>');"><span class="glyphicon glyphicon-pencil"></span> Editar Perfil</a></li>
-                                                                        <li><a onclick="eliminar_perfil('<?= $row->ID_PERFIL; ?>');"><span class="glyphicon glyphicon-remove"></span> Eliminar Perfil</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                            <td><?= $row->ID_PERFIL; ?></td>
-                                                            <td><?= $row->nombre; ?></td>                                                            
-                                                            <td>
-                                                                <? if ($row->estado == '1') { ?>
-                                                                    <span class="label label-success">Activo</span>
-                                                                <? } else if ($row->estado == '2') { ?>
-                                                                    <span class="label label-warning">Inactivo</span>
-                                                                <? } else if ($row->estado == '3') { ?>
-                                                                    <span class="label label-danger">Bloqueado</span>
-                                                                <? } ?>
-                                                            </td>                                                                                                                        
-                                                        </tr>
-                                                    <? } ?>
-                                                </tbody>
-                                            </table>
-                                        <? } else { ?>
-                                            <h2>NO HAS INGRESADO NINGUN PRODUCTO</h2>
-                                        <? } ?>
+                                        
                                     </div>
                                 </div>
                             </div>                                                                                    
                         </div>                        
-                        <div class="row" id="editar-producto"></div>
 
                     </div>
                 </div>

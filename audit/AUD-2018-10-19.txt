@@ -1,3 +1,33 @@
 FECHA: 2018-10-19 10:41:30 El usuario EDISON CHULDE ejecuto:
 INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-19 10:41:30', 'echulde', '::1', 'Google Chrome','Windows 7');
 
+FECHA: 2018-10-19 11:05:38 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores,estado) VALUES ('pruebac', 'pruebac', 'c20ad4d76fe97759aa27a0c99bff6710', '2', 'edisonjct@gmail.com', '2018-10-19 11:05:36', 'S', '8')
+
+FECHA: 2018-10-19 11:08:10 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET estado='1' WHERE (ID_USUARIO='15') LIMIT 1;
+
+FECHA: 2018-10-19 11:54:54 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-19 11:54:53', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-19 12:39:57 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '16');
+
+FECHA: 2018-10-19 12:40:06 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '17');
+
+FECHA: 2018-10-19 12:40:16 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_permisos WHERE (ID_PERFIL='1') AND (ID_MENU='15');
+
+FECHA: 2018-10-19 12:40:20 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '15');
+
+FECHA: 2018-10-19 14:26:11 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-19 14:26:11', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-19 14:28:03 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('2', '2');
+
+FECHA: 2018-10-19 14:28:39 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_perfil (nombre) VALUES ('GERENCIA')
+
