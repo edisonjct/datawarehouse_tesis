@@ -40,6 +40,7 @@ class usuarioModel extends Modelo {
         INNER JOIN dw_perfil as p ON u.ID_PERFIL = p.ID_PERFIL
         WHERE u.estado != '9'
         ORDER BY fechaIng DESC;";
+        ocon($query);
         $result = $this->db->query($query);
         $array = '';
         while ($row = $result->fetch_object()) {
@@ -50,6 +51,7 @@ class usuarioModel extends Modelo {
 
     public function tabla_perfil_all() {
         $query = "SELECT * FROM dw_perfil WHERE estado != '9';";
+        ocon($query);
         $result = $this->db->query($query);
         $array = '';
         while ($row = $result->fetch_object()) {
@@ -60,6 +62,7 @@ class usuarioModel extends Modelo {
 
     public function tabla_menu_all() {
         $query = "SELECT * FROM dw_menu WHERE estado = '1' order by orden;";
+        ocon($query);
         $result = $this->db->query($query);
         $array = '';
         while ($row = $result->fetch_object()) {

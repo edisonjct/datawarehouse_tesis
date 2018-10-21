@@ -66,6 +66,7 @@ class cubosModel extends Modelo {
         data_mart_ventas
         WHERE fecha_ingreso BETWEEN '$desde 00:00:00' AND '$hasta 23:59:59'
         AND estado != '9';";
+        ocon($query);
         $result = $this->db->query($query);
         $array = '';
         while ($row = $result->fetch_object()) {
@@ -105,6 +106,7 @@ class cubosModel extends Modelo {
         WHERE fecha_ingreso BETWEEN '$desde 00:00:00' AND '$hasta 23:59:59' AND estado != '9'
         GROUP BY bodega,anio,mes,pais,tipo_provedor,cat_cliente;";
         $result = $this->db->query($query);
+        ocon($query);
         $array = '';
         while ($row = $result->fetch_object()) {
             $array[] = $row;
@@ -119,6 +121,7 @@ class cubosModel extends Modelo {
         FROM
         data_mart_clientes
         WHERE fecha_ingreso BETWEEN '$desde 00:00:00' AND '$hasta 23:59:59';";
+        ocon($query);
         $result = $this->db->query($query);
         $array = '';
         while ($row = $result->fetch_object()) {
@@ -130,6 +133,7 @@ class cubosModel extends Modelo {
 
     public function max_tabla($tabla) {
         $query = "SELECT count(*) as max FROM $tabla;";
+        ocon($query);
         $result = $this->db->query($query);
         return $result->fetch_object();
     }
@@ -141,6 +145,7 @@ class cubosModel extends Modelo {
         INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
         WHERE anio = '$anio' AND estado = '1'
         ORDER BY orden ASC;";
+        ocon($query);
         $result = $this->db->query($query);
         $array = '';
         while ($row = $result->fetch_object()) {
@@ -160,6 +165,7 @@ class cubosModel extends Modelo {
         data_mart_ventas
         WHERE fecha_ingreso BETWEEN '$desde 00:00:00' AND '$hasta 23:59:59' AND estado != '9'
         GROUP BY bodega ORDER BY bodega;";
+        ocon($query);
         $result = $this->db->query($query);
         $array = '';
         while ($row = $result->fetch_object()) {

@@ -27,7 +27,7 @@ function auditoria($query) {
 
 function ocon($query) {
     $insert = 1;
-    $select = 0;
+    $select = 1;
     $delete = 1;
     $update = 1;
     if (strpos($query, 'INSERT') !== FALSE) {

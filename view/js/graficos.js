@@ -15,9 +15,10 @@ $(document).on('ready', function () {
 
 
 function cargar_venta_anaul() {
+    $.blockUI({css: {border: 'none', padding: '15px', backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .5, color: '#fff'}});
     var anio = $('#anioventas').val();
     $('#anioventas').attr('disabled', 'disabled').prepend('<i class="fa fa-refresh fa-spin"></i>  ');
-    $('#ventastiendas').html('<div align="center"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i></div>');
+    //$('#ventastiendas').html('<div align="center"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i></div>');
     var url = '../controler/datagraficosControler.php';
     $.ajax({
         type: 'POST',
@@ -25,6 +26,7 @@ function cargar_venta_anaul() {
         data: 'proceso=ventasanuales&anio=' + anio,
         success: function (datos) {
             $('#ventastiendas').html(datos);
+            $.unblockUI();
         },
         complete: function () {
             $('#anioventas').removeAttr('disabled').find('i.fa').remove();
@@ -34,7 +36,8 @@ function cargar_venta_anaul() {
 }
 
 function cargar_pais() {
-    $('#ventaspaises').html('<div align="center"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i></div>');
+    //$('#ventaspaises').html('<div align="center"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i></div>');
+    $.blockUI({css: {border: 'none', padding: '15px', backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .5, color: '#fff'}});
     var url = '../controler/datagraficosControler.php';
     $.ajax({
         type: 'POST',
@@ -42,6 +45,7 @@ function cargar_pais() {
         data: 'proceso=ventaspaises',
         success: function (datos) {
             $('#ventaspaises').html(datos);
+            $.unblockUI();
         }
     });
     return false;
@@ -50,7 +54,8 @@ function cargar_pais() {
 function cargar_categoria() {
     var anio = $('#aniocategoria').val();
     $('#aniocategoria').attr('disabled', 'disabled').prepend('<i class="fa fa-refresh fa-spin"></i>  ');
-    $('#ventascategoria').html('<div align="center"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i></div>');
+    //$('#ventascategoria').html('<div align="center"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i></div>');
+    $.blockUI({css: {border: 'none', padding: '15px', backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .5, color: '#fff'}});
     var url = '../controler/datagraficosControler.php';
     $.ajax({
         type: 'POST',
@@ -58,6 +63,7 @@ function cargar_categoria() {
         data: 'proceso=ventascategoria&anio=' + anio,
         success: function (datos) {
             $('#ventascategoria').html(datos);
+            $.unblockUI();
         },
         complete: function () {
             $('#aniocategoria').removeAttr('disabled').find('i.fa').remove();
@@ -69,7 +75,8 @@ function cargar_categoria() {
 function cargar_vendedores() {
     var anio = $('#aniovendedor').val();
     $('#aniovendedor').attr('disabled', 'disabled').prepend('<i class="fa fa-refresh fa-spin"></i>  ');
-    $('#ventasvendedor').html('<div align="center"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i></div>');
+    //$('#ventasvendedor').html('<div align="center"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i></div>');
+    $.blockUI({css: {border: 'none', padding: '15px', backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .5, color: '#fff'}});
     var url = '../controler/datagraficosControler.php';
     $.ajax({
         type: 'POST',
@@ -77,6 +84,7 @@ function cargar_vendedores() {
         data: 'proceso=ventasvendedor&anio=' + anio,
         success: function (datos) {
             $('#ventasvendedor').html(datos);
+            $.unblockUI();
         },
         complete: function () {
             $('#aniovendedor').removeAttr('disabled').find('i.fa').remove();
@@ -88,7 +96,8 @@ function cargar_vendedores() {
 function cargar_ventas_clientes() {
     var anio = $('#anioclientes').val();
     $('#anioclientes').attr('disabled', 'disabled').prepend('<i class="fa fa-refresh fa-spin"></i>  ');
-    $('#ventasclientes').html('<div align="center"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i></div>');
+    //$('#ventasclientes').html('<div align="center"><i class="fa fa-refresh fa-spin" style="font-size:40px"></i></div>');
+    $.blockUI({css: {border: 'none', padding: '15px', backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .5, color: '#fff'}});
     var url = '../controler/datagraficosControler.php';
     $.ajax({
         type: 'POST',
@@ -96,6 +105,7 @@ function cargar_ventas_clientes() {
         data: 'proceso=ventasclientes&anio=' + anio,
         success: function (datos) {
             $('#ventasclientes').html(datos);
+            $.unblockUI();
         },
         complete: function () {
             $('#anioclientes').removeAttr('disabled').find('i.fa').remove();

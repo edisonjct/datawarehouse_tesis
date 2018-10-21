@@ -296,7 +296,7 @@ switch ($_POST['proceso']) {
                                                     <button data-toggle="dropdown" class="btn btn-dark dropdown-toggle btn-xs" type="button"><span class="fa fa-cogs"> <span class="caret"></span></span></button>
                                                     <ul role="menu" class="dropdown-menu">
                                                         <li><a onclick="mostrar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-pencil"></span> Editar</a></li>
-                                                        <li><a onclick="mostrar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-remove"></span> Eliminar</a></li>                                                                        
+                                                        <li><a onclick="eliminar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-remove"></span> Eliminar</a></li>                                                                        
                                                         <li class="divider"></li>
                                                         <li><a onclick="mostrar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-duplicate"></span> Resetear Clave</a></li>
                                                     </ul>

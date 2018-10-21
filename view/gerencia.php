@@ -45,14 +45,15 @@ $mes = date("m");
         <link href="vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
         <link href="vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
         <link href="vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-        <link href="vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+        <link href="vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">        
         <link href="build/css/custom.min.css" rel="stylesheet">
         <script src="vendors/highcharts/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/exporting.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="vendors/highcharts/data.js"></script>
         <script src="vendors/highcharts/drilldown.js"></script>
-        <script src="vendors/jquery/dist/jquery.min.js"></script>        
+        <script src="vendors/jquery/dist/jquery.min.js"></script>             
+        <script src="vendors/blockUI/jquery.blockUI.js"></script>
     </head>
     <body class="nav-md">
         <div class="container body">
@@ -169,7 +170,8 @@ $mes = date("m");
                                         <div id="ventasvendedor" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
                                     </div>
                                 </div>
-                            </div>                                                                                    
+                            </div>
+                            
                         </div>
                         <div class="row" id="">
                             <div class="col-md-12 col-sm-12 col-xs-12">

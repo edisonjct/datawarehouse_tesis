@@ -11,7 +11,7 @@ if (!$_SESSION['id']) {
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Dashboard</title>        
+        <title>Cubo de Ventas</title>        
         <link rel="stylesheet" type="text/css" href="vendors/orb/dist/orb.css" />
         <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">                
         <script type="text/javascript" src="vendors/orb/deps/react-0.12.2.js"></script>
@@ -118,7 +118,7 @@ if (!$_SESSION['id']) {
     </div>
     <!-- jQuery -->
     <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
+    <script src="vendors/blockUI/jquery.blockUI.js"></script>
     <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <script src="vendors/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>

@@ -116,7 +116,8 @@ $perfiles = $usuarioModel->tabla_perfil_all();
                 <? include_once 'templates/footer.php'; ?>
             </div>
         </div>
-        <script src="vendors/jquery/dist/jquery.min.js"></script>        
+        <script src="vendors/jquery/dist/jquery.min.js"></script>     
+        <script src="vendors/blockUI/jquery.blockUI.js"></script>
         <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>        
         <script src="vendors/fastclick/lib/fastclick.js"></script>        
         <script src="vendors/nprogress/nprogress.js"></script>

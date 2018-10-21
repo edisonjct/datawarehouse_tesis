@@ -1,0 +1,1043 @@
+FECHA: 2018-10-21 00:03:48 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_usuario (nombre, usuario, clave, ID_PERFIL, correo, fechaIng,ver_valores,estado) VALUES ('PruebaCargas', 'pc', 'c20ad4d76fe97759aa27a0c99bff6710', '7', 'edisonjct@gmail.com', '2018-10-21 00:03:47', 'S', '8')
+
+FECHA: 2018-10-21 00:06:50 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET estado='9' WHERE (ID_USUARIO='16') LIMIT 1;
+
+FECHA: 2018-10-21 00:08:09 El usuario EDISON CHULDE ejecuto:
+UPDATE dw_usuario SET estado='1' WHERE (ID_USUARIO='17') LIMIT 1;
+
+FECHA: 2018-10-21 00:09:24 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_permisos WHERE (ID_PERFIL='1') AND (ID_MENU='19');
+
+FECHA: 2018-10-21 00:09:29 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('1', '19');
+
+FECHA: 2018-10-21 00:11:18 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-21 00:11:18', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-21 00:13:51 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:14:02 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-21 00:14:02', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-21 00:14:04 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:14:22 El usuario EDISON CHULDE ejecuto:
+SELECT
+        u.ID_USUARIO,
+        u.usuario,
+        u.nombre,
+        u.clave,
+        u.ID_PERFIL,
+        u.correo,
+        u.telefono,
+        u.avatar,
+        u.ver_valores,
+        u.estado,
+        p.nombre as perfil,
+        u.fechaIng as fecha
+        FROM
+        dw_usuario as u
+        INNER JOIN dw_perfil as p ON u.ID_PERFIL = p.ID_PERFIL
+        WHERE u.estado != '9'
+        ORDER BY fechaIng DESC;
+
+FECHA: 2018-10-21 00:14:22 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:14:51 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_perfil WHERE estado != '9';
+
+FECHA: 2018-10-21 00:15:14 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_perfil WHERE estado != '9';
+
+FECHA: 2018-10-21 00:15:14 El usuario EDISON CHULDE ejecuto:
+SELECT
+        u.ID_USUARIO,
+        u.usuario,
+        u.nombre,
+        u.clave,
+        u.ID_PERFIL,
+        u.correo,
+        u.telefono,
+        u.avatar,
+        u.ver_valores,
+        u.estado,
+        p.nombre as perfil,
+        u.fechaIng as fecha
+        FROM
+        dw_usuario as u
+        INNER JOIN dw_perfil as p ON u.ID_PERFIL = p.ID_PERFIL
+        WHERE u.estado != '9'
+        ORDER BY fechaIng DESC;
+
+FECHA: 2018-10-21 00:15:30 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_perfil WHERE estado != '9';
+
+FECHA: 2018-10-21 00:15:30 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:15:34 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:16:19 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:16:30 El usuario  ejecuto:
+SELECT
+        bodega as bodega,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-01-01 00:00:00' AND '2018-10-21 23:59:59' AND estado != '9'
+        GROUP BY bodega ORDER BY bodega;
+
+FECHA: 2018-10-21 00:16:32 El usuario  ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+        dia,
+        mes,
+        anio,
+        cat_cliente,
+        ciudad,
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,
+        cdi        
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-01-01 00:00:00' AND '2018-10-21 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,pais,tipo_provedor,cat_cliente;
+
+FECHA: 2018-10-21 00:19:03 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:19:09 El usuario  ejecuto:
+SELECT
+        bodega as bodega,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-21 23:59:59' AND estado != '9'
+        GROUP BY bodega ORDER BY bodega;
+
+FECHA: 2018-10-21 00:19:11 El usuario  ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+        dia,
+        mes,
+        anio,
+        cat_cliente,
+        ciudad,
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,
+        cdi        
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-21 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,pais,tipo_provedor,cat_cliente;
+
+FECHA: 2018-10-21 00:20:46 El usuario EDISON CHULDE ejecuto:
+SELECT
+        bodega as bodega,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-21 23:59:59' AND estado != '9'
+        GROUP BY bodega ORDER BY bodega;
+
+FECHA: 2018-10-21 00:20:48 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+        dia,
+        mes,
+        anio,
+        cat_cliente,
+        ciudad,
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,
+        cdi        
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-21 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,pais,tipo_provedor,cat_cliente;
+
+FECHA: 2018-10-21 00:21:20 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:22:52 El usuario EDISON CHULDE ejecuto:
+SELECT
+        *    
+        FROM
+        data_mart_clientes
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-21 23:59:59';
+
+FECHA: 2018-10-21 00:23:41 El usuario EDISON CHULDE ejecuto:
+SELECT
+        u.ID_USUARIO,
+        u.usuario,
+        u.nombre,
+        u.clave,
+        u.ID_PERFIL,
+        u.correo,
+        u.telefono,
+        u.avatar,
+        u.ver_valores,
+        u.estado,
+        p.nombre as perfil,
+        u.fechaIng as fecha
+        FROM
+        dw_usuario as u
+        INNER JOIN dw_perfil as p ON u.ID_PERFIL = p.ID_PERFIL
+        WHERE u.estado != '9'
+        ORDER BY fechaIng DESC;
+
+FECHA: 2018-10-21 00:23:41 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:23:49 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_perfil WHERE estado != '9';
+
+FECHA: 2018-10-21 00:23:49 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario WHERE ID_USUARIO = '17' LIMIT 1;
+
+FECHA: 2018-10-21 00:24:34 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:27:19 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:27:19 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as semana FROM data_mart_ventas_semanal WHERE semana = '41' AND anio = '2017' GROUP BY anio,semana;
+
+FECHA: 2018-10-21 00:27:19 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as mes FROM data_mart_ventas_mensual WHERE numeromes = '10' AND anio = '2017' GROUP BY anio,numeromes;
+
+FECHA: 2018-10-21 00:27:19 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as anio FROM data_mart_ventas_anual_mensual WHERE anio = '2017' GROUP BY anio;
+
+FECHA: 2018-10-21 00:27:19 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as semana FROM data_mart_ventas_semanal WHERE semana = '41' AND anio = '2018' GROUP BY anio,semana;
+
+FECHA: 2018-10-21 00:27:19 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as mes FROM data_mart_ventas_mensual WHERE numeromes = '10' AND anio = '2018' GROUP BY anio,numeromes;
+
+FECHA: 2018-10-21 00:27:19 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as anio FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio;
+
+FECHA: 2018-10-21 00:27:19 El usuario EDISON CHULDE ejecuto:
+SELECT pais FROM data_mart_ventas WHERE pais != '' GROUP BY pais ORDER BY pais;
+
+FECHA: 2018-10-21 00:27:21 El usuario EDISON CHULDE ejecuto:
+SELECT pais,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE pais != '' AND anio = '2017' GROUP BY anio,pais HAVING ROUND(sum(pvp)) >= 100 ORDER BY anio,pais;
+
+FECHA: 2018-10-21 00:27:22 El usuario EDISON CHULDE ejecuto:
+SELECT pais,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE pais != '' AND anio = '2018' GROUP BY anio,pais HAVING ROUND(sum(pvp)) >= 100 ORDER BY anio,pais;
+
+FECHA: 2018-10-21 00:27:23 El usuario EDISON CHULDE ejecuto:
+SELECT cat_producto,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cat_producto != '' AND anio = '2018' GROUP BY anio,cat_producto ORDER BY valor DESC LIMIT 10
+
+FECHA: 2018-10-21 00:27:24 El usuario EDISON CHULDE ejecuto:
+SELECT vendedor,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE vendedor != '' AND anio = '2018' GROUP BY anio,vendedor ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:27:25 El usuario EDISON CHULDE ejecuto:
+SELECT cliente,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cliente != '' AND anio = '2018' GROUP BY anio,cliente ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:27:26 El usuario EDISON CHULDE ejecuto:
+SELECT bodega,anio,sum(valor),porcentaje_anual FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio,bodega  ORDER BY bodega;
+
+FECHA: 2018-10-21 00:27:26 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'ANDES' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:27:26 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'CUMBAYA' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:27:26 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'EVENTOS' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:27:26 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'VILLAGE' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:27:26 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'WEB' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:27:35 El usuario EDISON CHULDE ejecuto:
+SELECT bodega,anio,sum(valor),porcentaje_anual FROM data_mart_ventas_anual_mensual WHERE anio = '2017' GROUP BY anio,bodega  ORDER BY bodega;
+
+FECHA: 2018-10-21 00:27:35 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'CUMBAYA' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:27:35 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'EVENTOS' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:27:35 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'VILLAGE' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:27:35 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'WEB' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:19 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:29:19 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as semana FROM data_mart_ventas_semanal WHERE semana = '41' AND anio = '2017' GROUP BY anio,semana;
+
+FECHA: 2018-10-21 00:29:19 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as mes FROM data_mart_ventas_mensual WHERE numeromes = '10' AND anio = '2017' GROUP BY anio,numeromes;
+
+FECHA: 2018-10-21 00:29:19 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as anio FROM data_mart_ventas_anual_mensual WHERE anio = '2017' GROUP BY anio;
+
+FECHA: 2018-10-21 00:29:19 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as semana FROM data_mart_ventas_semanal WHERE semana = '41' AND anio = '2018' GROUP BY anio,semana;
+
+FECHA: 2018-10-21 00:29:19 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as mes FROM data_mart_ventas_mensual WHERE numeromes = '10' AND anio = '2018' GROUP BY anio,numeromes;
+
+FECHA: 2018-10-21 00:29:19 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as anio FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio;
+
+FECHA: 2018-10-21 00:29:20 El usuario EDISON CHULDE ejecuto:
+SELECT pais FROM data_mart_ventas WHERE pais != '' GROUP BY pais ORDER BY pais;
+
+FECHA: 2018-10-21 00:29:21 El usuario EDISON CHULDE ejecuto:
+SELECT pais,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE pais != '' AND anio = '2017' GROUP BY anio,pais HAVING ROUND(sum(pvp)) >= 100 ORDER BY anio,pais;
+
+FECHA: 2018-10-21 00:29:22 El usuario EDISON CHULDE ejecuto:
+SELECT pais,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE pais != '' AND anio = '2018' GROUP BY anio,pais HAVING ROUND(sum(pvp)) >= 100 ORDER BY anio,pais;
+
+FECHA: 2018-10-21 00:29:23 El usuario EDISON CHULDE ejecuto:
+SELECT cat_producto,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cat_producto != '' AND anio = '2018' GROUP BY anio,cat_producto ORDER BY valor DESC LIMIT 10
+
+FECHA: 2018-10-21 00:29:24 El usuario EDISON CHULDE ejecuto:
+SELECT vendedor,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE vendedor != '' AND anio = '2018' GROUP BY anio,vendedor ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:29:25 El usuario EDISON CHULDE ejecuto:
+SELECT cliente,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cliente != '' AND anio = '2018' GROUP BY anio,cliente ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:29:26 El usuario EDISON CHULDE ejecuto:
+SELECT bodega,anio,sum(valor),porcentaje_anual FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio,bodega  ORDER BY bodega;
+
+FECHA: 2018-10-21 00:29:26 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'ANDES' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:26 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'CUMBAYA' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:26 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'EVENTOS' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:26 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'VILLAGE' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:26 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'WEB' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:33 El usuario EDISON CHULDE ejecuto:
+SELECT bodega,anio,sum(valor),porcentaje_anual FROM data_mart_ventas_anual_mensual WHERE anio = '2017' GROUP BY anio,bodega  ORDER BY bodega;
+
+FECHA: 2018-10-21 00:29:33 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'CUMBAYA' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:33 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'EVENTOS' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:33 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'VILLAGE' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:33 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'WEB' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:36 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:29:36 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as semana FROM data_mart_ventas_semanal WHERE semana = '41' AND anio = '2017' GROUP BY anio,semana;
+
+FECHA: 2018-10-21 00:29:36 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as mes FROM data_mart_ventas_mensual WHERE numeromes = '10' AND anio = '2017' GROUP BY anio,numeromes;
+
+FECHA: 2018-10-21 00:29:36 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as anio FROM data_mart_ventas_anual_mensual WHERE anio = '2017' GROUP BY anio;
+
+FECHA: 2018-10-21 00:29:36 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as semana FROM data_mart_ventas_semanal WHERE semana = '41' AND anio = '2018' GROUP BY anio,semana;
+
+FECHA: 2018-10-21 00:29:36 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as mes FROM data_mart_ventas_mensual WHERE numeromes = '10' AND anio = '2018' GROUP BY anio,numeromes;
+
+FECHA: 2018-10-21 00:29:36 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as anio FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio;
+
+FECHA: 2018-10-21 00:29:37 El usuario EDISON CHULDE ejecuto:
+SELECT pais FROM data_mart_ventas WHERE pais != '' GROUP BY pais ORDER BY pais;
+
+FECHA: 2018-10-21 00:29:38 El usuario EDISON CHULDE ejecuto:
+SELECT pais,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE pais != '' AND anio = '2017' GROUP BY anio,pais HAVING ROUND(sum(pvp)) >= 100 ORDER BY anio,pais;
+
+FECHA: 2018-10-21 00:29:39 El usuario EDISON CHULDE ejecuto:
+SELECT pais,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE pais != '' AND anio = '2018' GROUP BY anio,pais HAVING ROUND(sum(pvp)) >= 100 ORDER BY anio,pais;
+
+FECHA: 2018-10-21 00:29:40 El usuario EDISON CHULDE ejecuto:
+SELECT cat_producto,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cat_producto != '' AND anio = '2018' GROUP BY anio,cat_producto ORDER BY valor DESC LIMIT 10
+
+FECHA: 2018-10-21 00:29:41 El usuario EDISON CHULDE ejecuto:
+SELECT vendedor,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE vendedor != '' AND anio = '2018' GROUP BY anio,vendedor ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:29:42 El usuario EDISON CHULDE ejecuto:
+SELECT cliente,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cliente != '' AND anio = '2018' GROUP BY anio,cliente ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:29:43 El usuario EDISON CHULDE ejecuto:
+SELECT bodega,anio,sum(valor),porcentaje_anual FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio,bodega  ORDER BY bodega;
+
+FECHA: 2018-10-21 00:29:43 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'ANDES' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:43 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'CUMBAYA' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:43 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'EVENTOS' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:43 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'VILLAGE' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:43 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'WEB' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:52 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:29:52 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as semana FROM data_mart_ventas_semanal WHERE semana = '41' AND anio = '2017' GROUP BY anio,semana;
+
+FECHA: 2018-10-21 00:29:52 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as mes FROM data_mart_ventas_mensual WHERE numeromes = '10' AND anio = '2017' GROUP BY anio,numeromes;
+
+FECHA: 2018-10-21 00:29:52 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as anio FROM data_mart_ventas_anual_mensual WHERE anio = '2017' GROUP BY anio;
+
+FECHA: 2018-10-21 00:29:52 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as semana FROM data_mart_ventas_semanal WHERE semana = '41' AND anio = '2018' GROUP BY anio,semana;
+
+FECHA: 2018-10-21 00:29:52 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as mes FROM data_mart_ventas_mensual WHERE numeromes = '10' AND anio = '2018' GROUP BY anio,numeromes;
+
+FECHA: 2018-10-21 00:29:52 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as anio FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio;
+
+FECHA: 2018-10-21 00:29:53 El usuario EDISON CHULDE ejecuto:
+SELECT pais FROM data_mart_ventas WHERE pais != '' GROUP BY pais ORDER BY pais;
+
+FECHA: 2018-10-21 00:29:54 El usuario EDISON CHULDE ejecuto:
+SELECT pais,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE pais != '' AND anio = '2017' GROUP BY anio,pais HAVING ROUND(sum(pvp)) >= 100 ORDER BY anio,pais;
+
+FECHA: 2018-10-21 00:29:55 El usuario EDISON CHULDE ejecuto:
+SELECT pais,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE pais != '' AND anio = '2018' GROUP BY anio,pais HAVING ROUND(sum(pvp)) >= 100 ORDER BY anio,pais;
+
+FECHA: 2018-10-21 00:29:56 El usuario EDISON CHULDE ejecuto:
+SELECT cat_producto,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cat_producto != '' AND anio = '2018' GROUP BY anio,cat_producto ORDER BY valor DESC LIMIT 10
+
+FECHA: 2018-10-21 00:29:56 El usuario EDISON CHULDE ejecuto:
+SELECT vendedor,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE vendedor != '' AND anio = '2018' GROUP BY anio,vendedor ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:29:58 El usuario EDISON CHULDE ejecuto:
+SELECT cliente,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cliente != '' AND anio = '2018' GROUP BY anio,cliente ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT bodega,anio,sum(valor),porcentaje_anual FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio,bodega  ORDER BY bodega;
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'ANDES' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'CUMBAYA' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'EVENTOS' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'VILLAGE' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'WEB' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as semana FROM data_mart_ventas_semanal WHERE semana = '41' AND anio = '2017' GROUP BY anio,semana;
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as mes FROM data_mart_ventas_mensual WHERE numeromes = '10' AND anio = '2017' GROUP BY anio,numeromes;
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as anio FROM data_mart_ventas_anual_mensual WHERE anio = '2017' GROUP BY anio;
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as semana FROM data_mart_ventas_semanal WHERE semana = '41' AND anio = '2018' GROUP BY anio,semana;
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as mes FROM data_mart_ventas_mensual WHERE numeromes = '10' AND anio = '2018' GROUP BY anio,numeromes;
+
+FECHA: 2018-10-21 00:29:59 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as anio FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio;
+
+FECHA: 2018-10-21 00:30:00 El usuario EDISON CHULDE ejecuto:
+SELECT pais FROM data_mart_ventas WHERE pais != '' GROUP BY pais ORDER BY pais;
+
+FECHA: 2018-10-21 00:30:00 El usuario EDISON CHULDE ejecuto:
+SELECT pais,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE pais != '' AND anio = '2017' GROUP BY anio,pais HAVING ROUND(sum(pvp)) >= 100 ORDER BY anio,pais;
+
+FECHA: 2018-10-21 00:30:02 El usuario EDISON CHULDE ejecuto:
+SELECT pais,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE pais != '' AND anio = '2018' GROUP BY anio,pais HAVING ROUND(sum(pvp)) >= 100 ORDER BY anio,pais;
+
+FECHA: 2018-10-21 00:30:03 El usuario EDISON CHULDE ejecuto:
+SELECT cat_producto,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cat_producto != '' AND anio = '2018' GROUP BY anio,cat_producto ORDER BY valor DESC LIMIT 10
+
+FECHA: 2018-10-21 00:30:04 El usuario EDISON CHULDE ejecuto:
+SELECT vendedor,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE vendedor != '' AND anio = '2018' GROUP BY anio,vendedor ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:30:05 El usuario EDISON CHULDE ejecuto:
+SELECT cliente,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cliente != '' AND anio = '2018' GROUP BY anio,cliente ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:30:06 El usuario EDISON CHULDE ejecuto:
+SELECT bodega,anio,sum(valor),porcentaje_anual FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio,bodega  ORDER BY bodega;
+
+FECHA: 2018-10-21 00:30:06 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'ANDES' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:06 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'CUMBAYA' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:06 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'EVENTOS' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:06 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'VILLAGE' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:06 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'WEB' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:17 El usuario EDISON CHULDE ejecuto:
+SELECT bodega,anio,sum(valor),porcentaje_anual FROM data_mart_ventas_anual_mensual WHERE anio = '2017' GROUP BY anio,bodega  ORDER BY bodega;
+
+FECHA: 2018-10-21 00:30:17 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'CUMBAYA' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:17 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'EVENTOS' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:17 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'VILLAGE' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:17 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'WEB' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:20 El usuario EDISON CHULDE ejecuto:
+SELECT bodega,anio,sum(valor),porcentaje_anual FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio,bodega  ORDER BY bodega;
+
+FECHA: 2018-10-21 00:30:20 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'ANDES' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:20 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'CUMBAYA' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:20 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'EVENTOS' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:20 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'VILLAGE' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:20 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'WEB' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:25 El usuario EDISON CHULDE ejecuto:
+SELECT cat_producto,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cat_producto != '' AND anio = '2017' GROUP BY anio,cat_producto ORDER BY valor DESC LIMIT 10
+
+FECHA: 2018-10-21 00:30:32 El usuario EDISON CHULDE ejecuto:
+SELECT vendedor,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE vendedor != '' AND anio = '2017' GROUP BY anio,vendedor ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:30:37 El usuario EDISON CHULDE ejecuto:
+SELECT cliente,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cliente != '' AND anio = '2017' GROUP BY anio,cliente ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:30:43 El usuario EDISON CHULDE ejecuto:
+SELECT cliente,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cliente != '' AND anio = '2018' GROUP BY anio,cliente ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:30:51 El usuario EDISON CHULDE ejecuto:
+SELECT bodega,anio,sum(valor),porcentaje_anual FROM data_mart_ventas_anual_mensual WHERE anio = '2017' GROUP BY anio,bodega  ORDER BY bodega;
+
+FECHA: 2018-10-21 00:30:51 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'CUMBAYA' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:51 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'EVENTOS' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:51 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'VILLAGE' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:30:51 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2017' AND bodega = 'WEB' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:31:11 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:31:11 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as semana FROM data_mart_ventas_semanal WHERE semana = '41' AND anio = '2017' GROUP BY anio,semana;
+
+FECHA: 2018-10-21 00:31:11 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as mes FROM data_mart_ventas_mensual WHERE numeromes = '10' AND anio = '2017' GROUP BY anio,numeromes;
+
+FECHA: 2018-10-21 00:31:11 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as anio FROM data_mart_ventas_anual_mensual WHERE anio = '2017' GROUP BY anio;
+
+FECHA: 2018-10-21 00:31:11 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as semana FROM data_mart_ventas_semanal WHERE semana = '41' AND anio = '2018' GROUP BY anio,semana;
+
+FECHA: 2018-10-21 00:31:11 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as mes FROM data_mart_ventas_mensual WHERE numeromes = '10' AND anio = '2018' GROUP BY anio,numeromes;
+
+FECHA: 2018-10-21 00:31:11 El usuario EDISON CHULDE ejecuto:
+SELECT sum(valor) as anio FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio;
+
+FECHA: 2018-10-21 00:31:11 El usuario EDISON CHULDE ejecuto:
+SELECT pais FROM data_mart_ventas WHERE pais != '' GROUP BY pais ORDER BY pais;
+
+FECHA: 2018-10-21 00:31:12 El usuario EDISON CHULDE ejecuto:
+SELECT pais,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE pais != '' AND anio = '2017' GROUP BY anio,pais HAVING ROUND(sum(pvp)) >= 100 ORDER BY anio,pais;
+
+FECHA: 2018-10-21 00:31:13 El usuario EDISON CHULDE ejecuto:
+SELECT pais,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE pais != '' AND anio = '2018' GROUP BY anio,pais HAVING ROUND(sum(pvp)) >= 100 ORDER BY anio,pais;
+
+FECHA: 2018-10-21 00:31:15 El usuario EDISON CHULDE ejecuto:
+SELECT cat_producto,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cat_producto != '' AND anio = '2018' GROUP BY anio,cat_producto ORDER BY valor DESC LIMIT 10
+
+FECHA: 2018-10-21 00:31:16 El usuario EDISON CHULDE ejecuto:
+SELECT vendedor,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE vendedor != '' AND anio = '2018' GROUP BY anio,vendedor ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:31:16 El usuario EDISON CHULDE ejecuto:
+SELECT cliente,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cliente != '' AND anio = '2018' GROUP BY anio,cliente ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-21 00:31:18 El usuario EDISON CHULDE ejecuto:
+SELECT bodega,anio,sum(valor),porcentaje_anual FROM data_mart_ventas_anual_mensual WHERE anio = '2018' GROUP BY anio,bodega  ORDER BY bodega;
+
+FECHA: 2018-10-21 00:31:18 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'ANDES' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:31:18 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'CUMBAYA' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:31:18 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'EVENTOS' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:31:18 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'VILLAGE' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:31:18 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        data_mart_ventas_anual_mensual
+        WHERE anio = '2018' AND bodega = 'WEB' 
+        GROUP BY anio,bodega,numeromes
+        ORDER BY numeromes;
+
+FECHA: 2018-10-21 00:31:51 El usuario EDISON CHULDE ejecuto:
+SELECT cat_producto,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cat_producto != '' AND anio = '2017' GROUP BY anio,cat_producto ORDER BY valor DESC LIMIT 10
+
+FECHA: 2018-10-21 00:31:55 El usuario EDISON CHULDE ejecuto:
+SELECT cat_producto,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE cat_producto != '' AND anio = '2018' GROUP BY anio,cat_producto ORDER BY valor DESC LIMIT 10
+
+FECHA: 2018-10-21 00:32:08 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:32:16 El usuario EDISON CHULDE ejecuto:
+SELECT
+        bodega as bodega,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-01-01 00:00:00' AND '2018-10-21 23:59:59' AND estado != '9'
+        GROUP BY bodega ORDER BY bodega;
+
+FECHA: 2018-10-21 00:32:19 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+        dia,
+        mes,
+        anio,
+        cat_cliente,
+        ciudad,
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,
+        cdi        
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-01-01 00:00:00' AND '2018-10-21 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,pais,tipo_provedor,cat_cliente;
+
+FECHA: 2018-10-21 00:32:32 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-21 00:32:32', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-21 00:32:33 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_provedores;
+
+FECHA: 2018-10-21 00:32:34 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_clientes;
+
+FECHA: 2018-10-21 00:32:35 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_productos;
+
+FECHA: 2018-10-21 00:32:35 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM dw_usuario;
+
+FECHA: 2018-10-21 00:32:35 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-21 00:32:35 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2017' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-21 00:32:35 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2018' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-21 00:32:35 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2017' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-21 00:32:35 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2018' AND estado = '1'
+        ORDER BY orden ASC;
+

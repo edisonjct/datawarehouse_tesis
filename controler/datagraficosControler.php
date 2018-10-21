@@ -4,14 +4,13 @@
  *
  * @author EChulde
  */
+session_start();
 include_once '../model/datagraficosModel.php';
 include_once '../model/configuracionModel.php';
 include_once '../controler/funciones.php';
 $data_graficos = new datagraficosModel();
 $config = new configuracionModel();
 $años_activos = $config->tabla_config_all('02');
-
-
 
 $proceso = $_POST['proceso'];
 

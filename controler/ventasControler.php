@@ -10,12 +10,11 @@
  *
  * @author EChulde
  */
+session_start();
 include_once '../model/cubosModel.php';
 include_once 'funciones.php';
 
 $cubo = new cubosModel();
-
-
 
 switch ($_POST['proceso']) {
     case 'ventas':
@@ -23,7 +22,7 @@ switch ($_POST['proceso']) {
         $hasta = $_POST['end'];
         $tipo = $_POST['tipo'];
 
-        $venta_tiendas = $cubo->datos_grafico_ventas($desde, $hasta);        
+        $venta_tiendas = $cubo->datos_grafico_ventas($desde, $hasta);
         $array_nombre = '';
         $array_facturas = '';
         $array_libros = '';
@@ -33,8 +32,7 @@ switch ($_POST['proceso']) {
             $array_facturas .= number_format($row->facturas, 0, '', '') . ',';
             $array_libros .= number_format($row->cantidad, 0, '', '') . ',';
             $array_venta .= number_format($row->pvp, 0, '', '') . ',';
-        }        
-        
+        }
         ?>
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">                        
@@ -114,7 +112,7 @@ switch ($_POST['proceso']) {
             };
 
 
-        // use configuration item and data specified to show chart
+            // use configuration item and data specified to show chart
             myChart.setOption(option);
         </script>
         <?
