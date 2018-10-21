@@ -31,3 +31,6 @@ INSERT INTO dw_permisos (ID_PERFIL, ID_MENU) VALUES ('2', '2');
 FECHA: 2018-10-19 14:28:39 El usuario EDISON CHULDE ejecuto:
 INSERT INTO dw_perfil (nombre) VALUES ('GERENCIA')
 
+FECHA: 2018-10-19 17:08:33 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-19 17:08:33', 'echulde', '::1', 'Google Chrome','Windows 7');
+

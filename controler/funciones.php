@@ -137,38 +137,72 @@ function millar($numero) {
     return $numero + $aprox;
 }
 
-function kas($numero) {    
-
+function kas($numero) {
     switch (strlen($numero)) {
         case '3':
             return $numero;
             break;
         case '4':
-            return substr($numero, 0, 1) . ' K';
+            return number_format($numero / 1000, 0) . ' K';
             break;
         case '5':
-            return substr($numero, 0, 2) . ' K';
+            return number_format($numero / 1000, 0) . ' K';
             break;
         case '6':
-            return substr($numero, 0, 3) . ' K';
+            return number_format($numero / 1000, 0) . ' K';
             break;
         case '7':
-            return substr($numero, 0, 4) . ' K';
+            return number_format($numero / 1000000, 2) . ' M';
             break;
         case '8':
-            return substr($numero, 0, 5) . ' K';
+            return number_format($numero / 1000000, 2) . ' M';
             break;
         case '9':
-            return substr($numero, 0, 6) . ' K';
+            return number_format($numero / 1000000, 2) . ' M';
             break;
         case '10':
-            return substr($numero, 0, 7) . ' K';
+            return number_format($numero / 1000000000, 2) . ' B';
             break;
         case '11':
-            return substr($numero, 0, 8) . ' K';
+            return number_format($numero / 1000000000, 2) . ' B';
             break;
         case '12':
-            return substr($numero, 0, 9) . ' K';
+            return number_format($numero / 1000000000, 2) . ' B';
+            break;
+    }
+}
+
+function kas_2($numero) {
+    switch (strlen($numero)) {
+        case '3':
+            return $numero;
+            break;
+        case '4':
+            return number_format($numero / 1000, 0);
+            break;
+        case '5':
+            return number_format($numero / 1000, 0);
+            break;
+        case '6':
+            return number_format($numero / 1000, 0);
+            break;
+        case '7':
+            return number_format($numero / 1000000, 0);
+            break;
+        case '8':
+            return number_format($numero / 1000000, 0);
+            break;
+        case '9':
+            return number_format($numero / 1000000, 0);
+            break;
+        case '10':
+            return number_format($numero / 1000000000, 0);
+            break;
+        case '11':
+            return number_format($numero / 1000000000, 0);
+            break;
+        case '12':
+            return number_format($numero / 1000000000, 0);
             break;
     }
 }

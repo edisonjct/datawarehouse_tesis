@@ -326,4 +326,126 @@ class dtsModel extends Modelo {
         return $result->fetch_object();
     }
 
+    public function ventas_anulaes() {
+        $query = "INSERT INTO data_mart_ventas_anual_mensual(bodega,anio,mes,valor,numeromes)
+        SELECT
+        d.bodega,
+        d.anio,
+        CASE (d.mes) WHEN 'January' THEN '01 Enero'
+        WHEN 'February' THEN '02 Febrero'
+        WHEN 'March' THEN '03 Marzo'
+        WHEN 'April' THEN '04 Abril'
+        WHEN 'May' THEN '05 Mayo'
+        WHEN 'June' THEN '06 Junio'
+        WHEN 'July' THEN '07 Julio'
+        WHEN 'August' THEN '08 Agosto'
+        WHEN 'September' THEN '09 Septiembre'
+        WHEN 'October' THEN '10 Octubre'
+        WHEN 'November' THEN '11 Noviembre'
+        WHEN 'December' THEN '12 Diciembre' END mes,
+        sum(d.pvp),
+        CASE (d.mes) WHEN 'January' THEN 1
+        WHEN 'February' THEN 2
+        WHEN 'March' THEN 3
+        WHEN 'April' THEN 4
+        WHEN 'May' THEN 5
+        WHEN 'June' THEN 6
+        WHEN 'July' THEN 7
+        WHEN 'August' THEN 8
+        WHEN 'September' THEN 9
+        WHEN 'October' THEN 10
+        WHEN 'November' THEN 11
+        WHEN 'December' THEN 12 END valor_mes
+        FROM
+        data_mart_ventas AS d
+        INNER JOIN dw_bodegas AS b ON d.bodega = b.nombre
+        WHERE b.estado = 1
+        GROUP BY d.anio,d.bodega,mes;";
+        $result = $this->db->query($query);
+        return $result;
+    }
+
+    public function total_ventas_anules($anio) {
+        $query = "SELECT sum(pvp) as max FROM data_mart_ventas WHERE anio = '$anio' GROUP BY anio;";
+        $result = $this->db->query($query);
+        return $result->fetch_object();
+    }
+
+    public function total_ventas_anules_bodega($anio, $bodega) {
+        $query = "SELECT sum(pvp) as max FROM data_mart_ventas WHERE anio = '$anio' AND bodega = '$bodega' GROUP BY anio,bodega;";
+        $result = $this->db->query($query);
+        return $result->fetch_object();
+    }
+
+    public function sel_ventas_anuales() {
+        $query = "SELECT * FROM data_mart_ventas_anual_mensual;";
+        $result = $this->db->query($query);
+        $array = '';
+        while ($row = $result->fetch_object()) {
+            $array[] = $row;
+        }
+        $result->free();
+        return $array;
+    }
+
+    public function update_valor_bodega($anio, $bodega, $total) {
+        $query = "UPDATE data_mart_ventas_anual_mensual SET valorbodega='$total' WHERE (bodega='$bodega') AND (anio='$anio');";
+        $result = $this->db->query($query);
+        return $result;
+    }
+
+    public function update_porcentajes($anio, $bodega, $mes, $porcentaje_anual, $porcentaje_menual) {
+        $query = "UPDATE data_mart_ventas_anual_mensual SET porcentaje_anual='$porcentaje_anual', porcentaje_menual='$porcentaje_menual' WHERE (bodega='$bodega') AND (anio='$anio') AND (mes='$mes') LIMIT 1;";
+        $result = $this->db->query($query);
+        return $result;
+    }
+
+    public function update_valor_anio($anio, $valor) {
+        $query = "UPDATE data_mart_ventas_anual_mensual SET valoranio='$valor' WHERE (anio='$anio');";
+        $result = $this->db->query($query);
+        return $result;
+    }
+
+    public function data_mart_venta_semanal() {
+        $query = "INSERT INTO data_mart_ventas_semanal (bodega, anio, semana, valor)
+        SELECT
+	bodega,
+	anio,
+	WEEK (fecha_ingreso),
+	sum(pvp)
+        FROM
+	data_mart_ventas
+        GROUP BY bodega,anio,WEEK (fecha_ingreso)
+        ORDER BY WEEK (fecha_ingreso);";
+        $result = $this->db->query($query);
+        return $result;
+    }
+    
+    public function data_mart_ventas_mensual() {
+        $query = "INSERT INTO data_mart_ventas_mensual (bodega, anio, mes, numeromes, valor)
+        SELECT
+	bodega,
+	anio,
+        CASE mes WHEN 'January' THEN '01 Enero'
+        WHEN 'February' THEN '02 Febrero'
+        WHEN 'March' THEN '03 Marzo'
+        WHEN 'April' THEN '04 Abril'
+        WHEN 'May' THEN '05 Mayo'
+        WHEN 'June' THEN '06 Junio'
+        WHEN 'July' THEN '07 Julio'
+        WHEN 'August' THEN '08 Agosto'
+        WHEN 'September' THEN '09 Septiembre'
+        WHEN 'October' THEN '10 Octubre'
+        WHEN 'November' THEN '11 Noviembre'
+        WHEN 'December' THEN '12 Diciembre' END mes,
+	MONTH(fecha_ingreso),
+	sum(pvp)
+        FROM
+	data_mart_ventas
+        GROUP BY bodega,anio,MONTH(fecha_ingreso)
+        ORDER BY WEEK (fecha_ingreso);";
+        $result = $this->db->query($query);
+        return $result;
+    }
+
 }
