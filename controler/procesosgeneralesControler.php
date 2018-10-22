@@ -37,7 +37,7 @@ switch ($proceso) {
         $host = "localhost";
         $username = "root";
         $password = "";
-        $database_name = "ligas_app";
+        $database_name = "mrbooks_datawarehouse";
         $fecha = date("Ymd-His");
         $conn = mysqli_connect($host, $username, $password, $database_name);
         $tables = array();
@@ -173,5 +173,62 @@ switch ($proceso) {
             $delete = $procesos->delete_backup($id);
             unlink('../backups/' . $result->nombre);
         }
+        break;
+
+
+    case 'abrir_auditoria':
+        $nombre = $_POST['nombre'];
+        $path = '../audit/';
+        $file = fopen($path . $nombre, "r") or exit("Unable to open file!");
+        while (!feof($file)) {
+            echo fgets($file) . "<br />";
+        }
+        fclose($file);
+        break;
+
+    case 'mostrar_auditorias':
+        $directorio = opendir("../audit/"); //ruta actual
+        ?>
+        <script>
+            $("#table-usuarios").DataTable({
+                order: [[1, "desc"]],
+                dom: "Bfrtip",
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5',
+                    'print'
+                ],
+                responsive: true
+            });
+        </script>
+        <table id = "table-usuarios" class = "table table-striped table-bordered table-hover table-condensed dt-responsive dataTable no-footer dtr-inline" cellspacing = "0" width = "100%" role = "grid" aria-describedby = "datatable-responsive_info" style = "width: 100%;">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>NOMBRE</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <? while ($archivo = readdir($directorio)) { ?>
+                    <? if (!is_dir($archivo)) { ?>
+                        <tr>
+                            <td>
+                                <div class="btn-group">
+                                    <button data-toggle="dropdown" class="btn btn-dark dropdown-toggle btn-xs" type="button"><span class="fa fa-cogs"> <span class="caret"></span></span></button>
+                                    <ul role="menu" class="dropdown-menu">                                        
+                                        <li><a onclick="abrir_auditoria('<?= $archivo; ?>');"><span class="glyphicon glyphicon-pencil"></span> Abrir Auditoria</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td><?= $archivo; ?></td>                                                                                           
+                        </tr>
+                    <? } ?>
+                <? } ?>
+            </tbody>
+        </table>
+
+        <?
         break;
 }

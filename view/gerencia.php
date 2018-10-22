@@ -65,7 +65,10 @@ $mes = date("m");
                 <div class="right_col" role="main">
                     <div class="">
                         <div class="clearfix"></div>
-                        <h1>REPORTES ESTADISTICOS</h1>
+                        <div class="alert alert-info alert-dismissible fade in">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Info!</strong> Reportes Estadisticos
+                        </div>
                         <? foreach ($años_activos as $row) { ?>
                             <?
                             $result_semana = $data_graficos->venta_semanal($row->nomtabla, $semana);

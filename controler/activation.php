@@ -10,8 +10,11 @@
  *
  * @author EChulde
  */
+$user = '118';
+$userName = 'Edison Chulde';
 session_start();
-$_SESSION['id'] == '118';
+$_SESSION['id'] = $user;
+$_SESSION['nombre'] = $userName;
 if (!$_SESSION['id']) {
     header('Location: ../index.php');
 }
@@ -116,7 +119,8 @@ $url_base = $usuarioModel->url_base();
                 </div>                               
             </div>
         </div>
-        <script src="../view/vendors/jquery/dist/jquery.min.js"></script>        
+        <script src="../view/vendors/jquery/dist/jquery.min.js"></script>   
+        <script src="../view/vendors/blockUI/jquery.blockUI.js"></script>
         <script src="../view/vendors/bootstrap/dist/js/bootstrap.min.js"></script>        
         <script src="../view/vendors/fastclick/lib/fastclick.js"></script>        
         <script src="../view/vendors/nprogress/nprogress.js"></script>        

@@ -54,6 +54,11 @@ $mes = date("m");
                 <!-- page content -->
                 <div class="right_col" role="main">
                     <div class="">
+                        <div class="clearfix"></div>
+                        <div class="alert alert-info alert-dismissible fade in">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Info!</strong> Procesos ETL para generación de tablas de Hechos
+                        </div>
                         <div class="clearfix"></div>                        
                         <div class="row" id="">
                             <div class="col-md-12 col-sm-12 col-xs-12">

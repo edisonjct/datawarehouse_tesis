@@ -45,6 +45,26 @@ function backup() {
     return false;
 }
 
+function mostrat_bitacora() {
+    $.blockUI({css: {border: 'none', padding: '15px', backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .5, color: '#fff'}});
+    //$('#bitacora').html('<div align="center"><img src="images/data.gif" width="150"/></i> <br> <h1>Generando Backup...</h1></div>');
+    $('#btn-actualizar').attr('disabled', 'disabled').prepend('<i class="fa fa-refresh fa-spin"></i>  ');
+    var url = '../controler/procesosgeneralesControler.php';
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: 'proceso=mostrat_bitacora',
+        success: function (datos) {
+            $('#bitacora').html(datos);
+            $.unblockUI();
+        },
+        complete: function () {
+            $('#btn-actualizar').removeAttr('disabled').find('i.fa').remove();
+        }
+    });
+    return false;
+}
+
 function eliminar_backup(id) {
     swal({
         title: "Esta seguro de borrar el backup?",
@@ -68,7 +88,36 @@ function eliminar_backup(id) {
         });
         return false;
     });
+}
 
+function abrir_auditoria(nombre) {
+    $.blockUI({css: {border: 'none', padding: '15px', backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .5, color: '#fff'}});
+    //$('#bitacora').html('<div align="center"><img src="images/data.gif" width="150"/></i> <br> <h1>Generando Backup...</h1></div>');   
+    var url = '../controler/procesosgeneralesControler.php';
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: 'proceso=abrir_auditoria&nombre=' + nombre,
+        success: function (datos) {
+            $('#bitacora').html(datos);
+            $.unblockUI();
+        }
+    });
+    return false;
+}
 
-
+function mostrar_auditorias() {
+    $.blockUI({css: {border: 'none', padding: '15px', backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .5, color: '#fff'}});
+    //$('#bitacora').html('<div align="center"><img src="images/data.gif" width="150"/></i> <br> <h1>Generando Backup...</h1></div>');   
+    var url = '../controler/procesosgeneralesControler.php';
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: 'proceso=mostrar_auditorias',
+        success: function (datos) {
+            $('#bitacora').html(datos);
+            $.unblockUI();
+        }
+    });
+    return false;
 }

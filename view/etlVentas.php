@@ -35,7 +35,7 @@ $mes = date("m");
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ETL PRODUCTOS</title>                
+        <title>ETL VENTAS</title>                
         <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
@@ -54,6 +54,11 @@ $mes = date("m");
                 <!-- page content -->
                 <div class="right_col" role="main">
                     <div class="">
+                        <div class="clearfix"></div>
+                        <div class="alert alert-info alert-dismissible fade in">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Info!</strong> Procesos ETL para generación del Cubo de Ventas
+                        </div>
                         <div class="clearfix"></div>                        
                         <div class="row" id="">
                             <div class="col-md-12 col-sm-12 col-xs-12">

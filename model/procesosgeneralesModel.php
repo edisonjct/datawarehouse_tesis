@@ -39,6 +39,17 @@ class procesosgeneralesModel extends Modelo {
         return $array;
     }
 
+    public function sel_bitacora() {
+        $query = "SELECT * FROM dw_bitacora;";
+        ocon($query);
+        $result = $this->db->query($query);
+        $array = '';
+        while ($row = $result->fetch_object()) {
+            $array[] = $row;
+        }
+        return $array;
+    }
+
     public function delete_backup($id) {
         $query = "DELETE FROM dw_backups WHERE (id='$id');";
         ocon($query);

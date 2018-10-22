@@ -40,7 +40,7 @@ $usuarios = $usuarioModel->tabla_usuarios_all();
         <link href="vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
         <link href="build/css/custom.min.css" rel="stylesheet">
     </head>
-    <body class="nav-md">
+    <body class="nav-md" onload="cargar_usuarios();">
         <div class="container body">
             <div class="main_container">
                 <? include_once 'menuprofile.php'; ?>
@@ -50,6 +50,11 @@ $usuarios = $usuarioModel->tabla_usuarios_all();
                 <!-- page content -->
                 <div class="right_col" role="main">
                     <div class="">
+                        <div class="clearfix"></div>
+                        <div class="alert alert-info alert-dismissible fade in">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong>Info!</strong> En esta sección se ingresa, modifica y elimina usuarios del sistema, El ingreso y cambio de contraseña se verifica mediante correo electronico.
+                        </div>
                         <div class="clearfix"></div>
                         <div class="row" id="datos-usuario">
                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -61,60 +66,8 @@ $usuarios = $usuarioModel->tabla_usuarios_all();
                                         </ul>
                                         <div class="clearfix"></div>
                                     </div>
-                                    <div class="x_content">
-                                        <? if ($usuarios) { ?>
-                                            <table id="table-usuarios" class="table table-striped table-bordered table-hover table-condensed dt-responsive dataTable no-footer dtr-inline" cellspacing="0" width="100%" role="grid" aria-describedby="datatable-responsive_info" style="width: 100%;">
-                                                <thead>
-                                                    <tr>                                                        
-                                                        <th></th>
-                                                        <th>NOMBRE</th>
-                                                        <th>USUARIO</th>
-                                                        <th>CORREO</th>                                                        
-                                                        <th>TIPO</th>
-                                                        <th>ESTADO</th>
-                                                        <th>FECHA</th>                                                                                                                
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <? foreach ($usuarios as $row) { ?>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="btn-group">
-                                                                    <button data-toggle="dropdown" class="btn btn-dark dropdown-toggle btn-xs" type="button"><span class="fa fa-cogs"> <span class="caret"></span></span></button>
-                                                                    <ul role="menu" class="dropdown-menu">
-                                                                        <li><a onclick="mostrar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-pencil"></span> Editar</a></li>
-                                                                        <li><a onclick="eliminar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-remove"></span> Eliminar</a></li>                                                                        
-                                                                        <li class="divider"></li>
-                                                                        <li><a onclick="reset_password('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-duplicate"></span> Resetear Clave</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </td>
-                                                            <td><?= $row->nombre; ?></td>
-                                                            <td><?= $row->usuario; ?></td>
-                                                            <td><?= $row->correo; ?></td>                                                            
-                                                            <td><?= $row->perfil; ?></td>                                                            
-                                                            <td>
-                                                                <? if ($row->estado == '1') { ?>
-                                                                    <span class="label label-success">Activo</span>
-                                                                <? } else if ($row->estado == '2') { ?>
-                                                                    <span class="label label-warning">Inactivo</span>
-                                                                <? } else if ($row->estado == '3') { ?>
-                                                                    <span class="label label-danger">Bloqueado</span>
-                                                                <? } else if ($row->estado == '8') { ?>
-                                                                    <span class="label label-info">Por Activar</span>
-                                                                <? } ?>
-                                                            </td>
-                                                            <td><?= $row->fecha; ?></td>                                                            
-                                                        </tr>
-                                                    <? } ?>
-                                                </tbody>
-                                            </table>
-                                        <? } else { ?>
-                                            <h2>NO HAS INGRESADO NINGUN PRODUCTO</h2>
-                                        <? } ?>
-                                    </div>
                                 </div>
-                            </div>                                                                                    
+                            </div>
                         </div>                        
                         <div class="row" id="editar-producto"></div>
 

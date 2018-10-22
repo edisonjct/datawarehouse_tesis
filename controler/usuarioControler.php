@@ -298,7 +298,7 @@ switch ($_POST['proceso']) {
                                                         <li><a onclick="mostrar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-pencil"></span> Editar</a></li>
                                                         <li><a onclick="eliminar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-remove"></span> Eliminar</a></li>                                                                        
                                                         <li class="divider"></li>
-                                                        <li><a onclick="mostrar_usuario('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-duplicate"></span> Resetear Clave</a></li>
+                                                        <li><a onclick="reset_password('<?= $row->ID_USUARIO; ?>');"><span class="glyphicon glyphicon-duplicate"></span> Resetear Clave</a></li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -499,7 +499,7 @@ switch ($_POST['proceso']) {
         ?>
         <script>
             $("#table-perfil").DataTable({
-                order: [[0, "desc"]],
+                order: [[1, "desc"]],
                 dom: "Bfrtip",
                 buttons: [
                     'copyHtml5',
@@ -654,7 +654,7 @@ switch ($_POST['proceso']) {
             ?>
             <script>
                 swal("¡Exito!", "Usuario Modificado Con Exito", "success");
-                setTimeout("cargar_perfil();", 100);
+                cargar_perfil();
             </script>
             <?
         } else {
