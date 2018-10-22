@@ -26,7 +26,7 @@ require_once 'funciones.php';
 
 $tiempo_inicio = microtime(true);
 $dtsSRE = new dtsModel();
-//$dtsPAC = new dtsModelPac();
+$dtsPAC = new dtsModelPac();
 $config = new configuracionModel();
 $row_bodegas = $config->bodegas();
 $fecha = $config->tabla_config_by_id('01', '01');
