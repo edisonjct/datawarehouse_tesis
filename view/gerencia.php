@@ -40,7 +40,6 @@ $mes = date("m");
         <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
         <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-        <!-- Datatables -->
         <link href="vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
         <link href="vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
         <link href="vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
