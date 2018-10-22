@@ -110,9 +110,6 @@ switch ($_POST['proceso']) {
                     }
                 ]
             };
-
-
-            // use configuration item and data specified to show chart
             myChart.setOption(option);
         </script>
         <?
@@ -516,5 +513,202 @@ switch ($_POST['proceso']) {
 
     case 'provedores':
 
+        break;
+
+    case 'vendedores':
+        $desde = $_POST['start'];
+        $hasta = $_POST['end'];
+        //////////////////////////
+        $result = $cubo->sel_grafico_vendedores($desde, $hasta);
+        $array_nombre = '';
+        $array_facturas = '';
+        $array_libros = '';
+        $array_venta = '';
+        foreach ($result as $row) {
+            $array_nombre .= "'" . $row->vendedor . "',";
+            $array_facturas .= number_format($row->facturas, 0, '', '') . ',';
+            $array_libros .= number_format($row->cantidad, 0, '', '') . ',';
+            $array_venta .= number_format($row->pvp, 0, '', '') . ',';
+        }
+        ?>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">                        
+                <div class="x_panel">                                                       
+                    <div class="x_content">
+                        <div id="main" style="height:350px;"></div>
+                    </div>
+                </div>
+            </div>                    
+        </div>
+        <script>
+            var myChart = echarts.init(document.getElementById('main'));
+            var option = {
+                title: {text: 'Grafico de Vendedores', subtext: 'Top 10 Vendedores'},
+                tooltip: {trigger: 'axis', axisPointer: {type: 'shadow'}},
+                legend: {data: ['Facturas', 'Libros', 'Venta']},
+                toolbox: {
+                    show: true,
+                    feature: {
+                        mark: {show: true},
+                        dataView: {show: true, readOnly: false},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                xAxis: [{type: 'category', data: [<?= $array_nombre; ?>]}],
+                yAxis: [{type: 'value'}],
+                series: [
+                    {
+                        name: 'Facturas',
+                        type: 'bar',
+                        data: [<?= $array_facturas; ?>]
+                    },
+                    {
+                        name: 'Libros',
+                        type: 'bar',
+                        data: [<?= $array_libros; ?>]
+                    },
+                    {
+                        name: 'Venta',
+                        type: 'bar',
+                        data: [<?= $array_venta; ?>],
+                        markLine: {
+                            lineStyle: {
+                                normal: {
+                                    type: 'dashed'
+                                }
+                            },
+                            data: [
+                                [{type: 'min'}, {type: 'max'}]
+                            ]
+                        }
+                    }
+                ]
+            };
+            myChart.setOption(option);
+        </script>
+        <?
+        $get = $cubo->cubo_ventas_vendedores($desde, $hasta);
+        $array = '';
+        $contfacturas = 0;
+        $ultimafactura = '';
+        if ($get == true) {
+            foreach ($get as $row) {
+                $array .= "['" . $row->tipo . "'," . $row->numdoc . ",'" . $row->fecha_ingreso . "'," . $row->cantidad . "," . $row->costo . ""
+                        . "," . $row->vtabta . "," . $row->vtanet . "," . $row->desct . "," . $row->pvp . "," . $row->hora . ""
+                        . "," . $row->dia . ",'" . $row->mes . "'," . $row->anio . ",'" . $row->bodega . "','" . $row->autor . "'"
+                        . ",'" . $row->editorial . "','" . $row->cat_producto . "','" . $row->idioma . "','" . $row->provedor . "','" . $row->pais . "'"
+                        . ",'" . $row->tipo_provedor . "','" . $row->vendedor . "'], ";
+            }
+            $array = substr($array, 0, -1);
+            $respuesta = $array;
+        }
+        ?>
+        <div id="rr" style="padding: 7px;"></div>
+        <div id="export" style="padding: 7px;"></div>
+        <script type="text/javascript">
+            window.demo = {};
+            window.demo.data = [];
+            var data = getData();
+            for (var t = 0; t < 1; t++) {
+                for (var j = 0; j < data.length; j++) {
+                    window.demo.data.push(data[j]);
+                }
+            }
+
+            function getData() {
+                return [
+        <?= $respuesta ?>
+                ];
+            }
+            function addCommas(nStr) {
+                nStr += '';
+                x = nStr.split('.');
+                x1 = x[0];
+                x2 = x.length > 1 ? '.' + x[1] : '';
+                var rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                }
+                return x1 + x2;
+            }
+            function exportToExcel(anchor) {
+                anchor.href = orb.export(pgridwidget);
+                return true;
+            }
+            var config = {
+                dataSource: window.demo.data,
+                canMoveFields: true,
+                dataHeadersLocation: 'columns',
+                width: 3980,
+                height: 811,
+                theme: 'gray',
+                toolbar: {visible: true},
+                grandTotal: {rowsvisible: true, columnsvisible: true},
+                subTotal: {visible: true, collapsed: true, collapsible: true},
+                rowSettings: {
+                    subTotal: {
+                        visible: true,
+                        collapsed: true,
+                        collapsible: true
+                    }
+                },
+                columnSettings: {
+                    subTotal: {
+                        visible: true,
+                        collapsed: true,
+                        collapsible: true
+                    }
+                },
+                fields: [
+                    {name: '0', caption: 'Tipo'},
+                    {name: '1', caption: '#Documento'},
+                    {name: '2', caption: 'Fecha'},
+                    {name: '3', caption: 'Libros', aggregateFunc: 'sum'},
+                    {name: '4', caption: 'Costo', dataSettings: {aggregateFunc: 'sum', formatFunc: function (value) {
+                                return value ? addCommas(Number(value).toFixed(2)) + '' : '';
+                            }
+                        }},
+                    {name: '5', caption: 'VtBta', dataSettings: {aggregateFunc: 'sum', formatFunc: function (value) {
+                                return value ? addCommas(Number(value).toFixed(2)) + '' : '';
+                            }
+                        }},
+                    {name: '6', caption: 'VtNet', dataSettings: {aggregateFunc: 'sum', formatFunc: function (value) {
+                                return value ? addCommas(Number(value).toFixed(2)) + '' : '';
+                            }
+                        }},
+                    {name: '7', caption: 'Descu', dataSettings: {aggregateFunc: 'sum', formatFunc: function (value) {
+                                return value ? addCommas(Number(value).toFixed(2)) + '' : '';
+                            }
+                        }},
+                    {name: '8', caption: 'PVP', dataSettings: {aggregateFunc: 'sum', formatFunc: function (value) {
+                                return value ? addCommas(Number(value).toFixed(2)) + '' : '';
+                            }
+                        }},
+                    {name: '9', caption: 'Hora'},
+                    {name: '10', caption: '#Dia'},
+                    {name: '11', caption: 'Mes'},
+                    {name: '12', caption: 'Año'},
+                    {name: '13', caption: 'Bodega'},
+                    {name: '14', caption: 'Autor'},
+                    {name: '15', caption: 'Editorial'},
+                    {name: '16', caption: 'CatProducto'},
+                    {name: '17', caption: 'Idioma'},
+                    {name: '18', caption: 'Provedor'},
+                    {name: '19', caption: 'Pais'},
+                    {name: '20', caption: 'TipProvedor'},
+                    {name: '21', caption: 'Vendedor'}
+                ],
+                rows: ['Vendedor'],
+                columns: ['Año', 'Mes'],
+                data: ['Libros', 'PVP', '#Documento']
+            };
+            var elem = document.getElementById('rr');
+            var pgridwidget = new orb.pgridwidget(config);
+            pgridwidget.render(elem);
+        </script>
+
+        <?
         break;
 }

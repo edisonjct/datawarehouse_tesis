@@ -51,7 +51,7 @@ class dtsModelPac extends ModeloPac {
         m.desprod01 AS titulo,
         m.cantact01 AS cantidad,
         m.precuni01 AS costo,
-        m.fecvta01 AS fecha_venta,
+        m.fecult01 AS fecha_venta,
         m.precvta01 AS pvp,
         m.porciva01 AS iva,
         m.descto101 AS descuento,

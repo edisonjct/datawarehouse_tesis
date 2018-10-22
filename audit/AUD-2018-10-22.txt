@@ -2948,3 +2948,676 @@ SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
 FECHA: 2018-10-22 14:38:40 El usuario EDISON CHULDE ejecuto:
 SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
 
+FECHA: 2018-10-22 14:41:34 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 14:41:36 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 14:42:05 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 14:42:32 El usuario EDISON CHULDE ejecuto:
+SELECT
+        bodega as bodega,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2008-12-31 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega ORDER BY bodega;
+
+FECHA: 2018-10-22 14:42:34 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+        dia,
+        mes,
+        anio,
+        cat_cliente,
+        ciudad,
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,
+        cdi        
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2008-12-31 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,pais,tipo_provedor,cat_cliente;
+
+FECHA: 2018-10-22 14:46:19 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 14:46:24 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 14:55:44 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 14:57:29 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 14:58:22 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 14:58:46 El usuario  ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 14:58:54 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-22 14:58:54', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-22 14:58:55 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_provedores;
+
+FECHA: 2018-10-22 14:58:55 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_clientes;
+
+FECHA: 2018-10-22 14:58:56 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_productos;
+
+FECHA: 2018-10-22 14:58:57 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM dw_usuario;
+
+FECHA: 2018-10-22 14:58:57 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 14:58:57 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2017' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 14:58:57 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2018' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 14:58:57 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2017' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 14:58:57 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2018' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 14:59:05 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 14:59:26 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 14:59:31 El usuario EDISON CHULDE ejecuto:
+SELECT
+        bodega as bodega,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega ORDER BY bodega;
+
+FECHA: 2018-10-22 15:08:27 El usuario EDISON CHULDE ejecuto:
+SELECT vendedor,ROUND(sum(pvp)) as valor FROM data_mart_ventas WHERE vendedor != '' AND anio = '' GROUP BY anio,vendedor ORDER BY valor DESC LIMIT 10;
+
+FECHA: 2018-10-22 15:09:17 El usuario EDISON CHULDE ejecuto:
+SELECT
+        vendedor as vendedor,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY vendedor ORDER BY sum(pvp) DESC;
+
+FECHA: 2018-10-22 15:09:44 El usuario EDISON CHULDE ejecuto:
+SELECT
+        vendedor as vendedor,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY vendedor ORDER BY sum(pvp) DESC;
+
+FECHA: 2018-10-22 15:10:40 El usuario EDISON CHULDE ejecuto:
+SELECT
+        vendedor as vendedor,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY vendedor ORDER BY sum(pvp) DESC LIMIT 10;
+
+FECHA: 2018-10-22 15:36:30 El usuario EDISON CHULDE ejecuto:
+SELECT
+        vendedor as vendedor,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY vendedor ORDER BY sum(pvp) DESC LIMIT 10;
+
+FECHA: 2018-10-22 15:36:31 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+	hora,
+        dia,
+        mes,
+        anio,        
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,
+        cdi,
+        vendedor       
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,dia,hora,vendedor;
+
+FECHA: 2018-10-22 15:45:36 El usuario EDISON CHULDE ejecuto:
+SELECT
+        vendedor as vendedor,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY vendedor ORDER BY sum(pvp) DESC LIMIT 10;
+
+FECHA: 2018-10-22 15:45:38 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+	hora,
+        dia,
+        mes,
+        anio,        
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,        
+        vendedor       
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,dia,hora,vendedor;
+
+FECHA: 2018-10-22 15:46:58 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 15:48:01 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 15:48:08 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+	hora,
+        dia,
+        mes,
+        anio,        
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,        
+        vendedor       
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,dia,hora,vendedor;
+
+FECHA: 2018-10-22 15:48:23 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 15:49:19 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+	hora,
+        dia,
+        mes,
+        anio,        
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,        
+        vendedor       
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-21 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,dia,hora,vendedor;
+
+FECHA: 2018-10-22 15:52:51 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+	hora,
+        dia,
+        mes,
+        anio,        
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,        
+        vendedor       
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-21 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,dia,hora,vendedor;
+
+FECHA: 2018-10-22 15:53:25 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+	hora,
+        dia,
+        mes,
+        anio,        
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,        
+        vendedor       
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-21 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,dia,hora,vendedor;
+
+FECHA: 2018-10-22 15:53:51 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+	hora,
+        dia,
+        mes,
+        anio,        
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,        
+        vendedor       
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-21 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,dia,hora,vendedor;
+
+FECHA: 2018-10-22 15:54:29 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 15:54:39 El usuario EDISON CHULDE ejecuto:
+SELECT
+        vendedor as vendedor,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-20 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY vendedor ORDER BY sum(pvp) DESC LIMIT 10;
+
+FECHA: 2018-10-22 15:54:41 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+	hora,
+        dia,
+        mes,
+        anio,        
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,        
+        vendedor       
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-10-20 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,dia,hora,vendedor;
+
+FECHA: 2018-10-22 15:54:52 El usuario EDISON CHULDE ejecuto:
+SELECT
+        vendedor as vendedor,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-01-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY vendedor ORDER BY sum(pvp) DESC LIMIT 10;
+
+FECHA: 2018-10-22 15:54:55 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+	hora,
+        dia,
+        mes,
+        anio,        
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,        
+        vendedor       
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-01-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,dia,hora,vendedor;
+
+FECHA: 2018-10-22 15:55:17 El usuario EDISON CHULDE ejecuto:
+SELECT
+        vendedor as vendedor,
+        (COUNT(documento)) AS facturas,
+        sum(cantidad) AS cantidad,
+        sum(pvp) AS pvp
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-01-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY vendedor ORDER BY sum(pvp) DESC LIMIT 10;
+
+FECHA: 2018-10-22 15:55:19 El usuario EDISON CHULDE ejecuto:
+SELECT
+        CASE WHEN tipo = '80' THEN 'FACTURA' END as tipo,				
+        fecha_ingreso,
+	(COUNT(documento)) as numdoc,
+        sum(cantidad) as cantidad,
+        sum(costo) as costo,
+        sum(vtabta) as vtabta,
+        sum(vtanet) as vtanet,
+        sum(desct) as desct,
+        sum(pvp) as pvp,
+	hora,
+        dia,
+        mes,
+        anio,        
+        bodega,       
+        autor,
+        editorial,
+        cat_producto,
+        idioma,
+        provedor,
+        pais,
+        tipo_provedor,        
+        vendedor       
+        FROM
+        data_mart_ventas
+        WHERE fecha_ingreso BETWEEN '2018-01-01 00:00:00' AND '2018-10-22 23:59:59' AND estado != '9'
+        GROUP BY bodega,anio,mes,dia,hora,vendedor;
+
+FECHA: 2018-10-22 15:58:51 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 15:58:56 El usuario EDISON CHULDE ejecuto:
+SELECT
+        u.ID_USUARIO,
+        u.usuario,
+        u.nombre,
+        u.clave,
+        u.ID_PERFIL,
+        u.correo,
+        u.telefono,
+        u.avatar,
+        u.ver_valores,
+        u.estado,
+        p.nombre as perfil,
+        u.fechaIng as fecha
+        FROM
+        dw_usuario as u
+        INNER JOIN dw_perfil as p ON u.ID_PERFIL = p.ID_PERFIL
+        WHERE u.estado != '9'
+        ORDER BY fechaIng DESC;
+
+FECHA: 2018-10-22 15:58:56 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 15:58:57 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_perfil WHERE estado != '9';
+
+FECHA: 2018-10-22 15:58:57 El usuario EDISON CHULDE ejecuto:
+SELECT
+        u.ID_USUARIO,
+        u.usuario,
+        u.nombre,
+        u.clave,
+        u.ID_PERFIL,
+        u.correo,
+        u.telefono,
+        u.avatar,
+        u.ver_valores,
+        u.estado,
+        p.nombre as perfil,
+        u.fechaIng as fecha
+        FROM
+        dw_usuario as u
+        INNER JOIN dw_perfil as p ON u.ID_PERFIL = p.ID_PERFIL
+        WHERE u.estado != '9'
+        ORDER BY fechaIng DESC;
+
+FECHA: 2018-10-22 16:00:46 El usuario EDISON CHULDE ejecuto:
+SELECT
+        u.ID_USUARIO,
+        u.usuario,
+        u.nombre,
+        u.clave,
+        u.ID_PERFIL,
+        u.correo,
+        u.telefono,
+        u.avatar,
+        u.ver_valores,
+        u.estado,
+        p.nombre as perfil,
+        u.fechaIng as fecha
+        FROM
+        dw_usuario as u
+        INNER JOIN dw_perfil as p ON u.ID_PERFIL = p.ID_PERFIL
+        WHERE u.estado != '9'
+        ORDER BY fechaIng DESC;
+
+FECHA: 2018-10-22 16:00:46 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 16:00:48 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_perfil WHERE estado != '9';
+
+FECHA: 2018-10-22 16:00:48 El usuario EDISON CHULDE ejecuto:
+SELECT
+        u.ID_USUARIO,
+        u.usuario,
+        u.nombre,
+        u.clave,
+        u.ID_PERFIL,
+        u.correo,
+        u.telefono,
+        u.avatar,
+        u.ver_valores,
+        u.estado,
+        p.nombre as perfil,
+        u.fechaIng as fecha
+        FROM
+        dw_usuario as u
+        INNER JOIN dw_perfil as p ON u.ID_PERFIL = p.ID_PERFIL
+        WHERE u.estado != '9'
+        ORDER BY fechaIng DESC;
+
+FECHA: 2018-10-22 16:01:15 El usuario EDISON CHULDE ejecuto:
+SELECT
+        u.ID_USUARIO,
+        u.usuario,
+        u.nombre,
+        u.clave,
+        u.ID_PERFIL,
+        u.correo,
+        u.telefono,
+        u.avatar,
+        u.ver_valores,
+        u.estado,
+        p.nombre as perfil,
+        u.fechaIng as fecha
+        FROM
+        dw_usuario as u
+        INNER JOIN dw_perfil as p ON u.ID_PERFIL = p.ID_PERFIL
+        WHERE u.estado != '9'
+        ORDER BY fechaIng DESC;
+
+FECHA: 2018-10-22 16:01:15 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 16:01:17 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_perfil WHERE estado != '9';
+
+FECHA: 2018-10-22 16:01:17 El usuario EDISON CHULDE ejecuto:
+SELECT
+        u.ID_USUARIO,
+        u.usuario,
+        u.nombre,
+        u.clave,
+        u.ID_PERFIL,
+        u.correo,
+        u.telefono,
+        u.avatar,
+        u.ver_valores,
+        u.estado,
+        p.nombre as perfil,
+        u.fechaIng as fecha
+        FROM
+        dw_usuario as u
+        INNER JOIN dw_perfil as p ON u.ID_PERFIL = p.ID_PERFIL
+        WHERE u.estado != '9'
+        ORDER BY fechaIng DESC;
+
+FECHA: 2018-10-22 16:03:32 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+

@@ -8,7 +8,7 @@ $(document).ready(function () {
     });
 
 
-    $('#btn-ventas').click(function () {        
+    $('#btn-ventas').click(function () {
         var desde = $('#start').val();
         var hasta = $('#hasta').val();
         var tipo = $('input:radio[name=tipo]:checked').val();
@@ -50,6 +50,27 @@ $(document).ready(function () {
                 });
             }
 
+        } else {
+            swal("¡Error!", "Seleccione Rango de Fechas", "error");
+        }
+    });
+
+    $('#btn-vendedores').click(function () {
+        var desde = $('#start').val();
+        var hasta = $('#hasta').val();
+        if (desde !== '' && hasta !== '') {
+            $.blockUI({css: {border: 'none', padding: '15px', backgroundColor: '#000', '-webkit-border-radius': '10px', '-moz-border-radius': '10px', opacity: .5, color: '#fff'}});
+            $('#cubo-clientes').html('<div align="center"><img src="images/data.gif" width="150"/></i></div>');
+            var url = "../controler/ventasControler.php";
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $("#cubo").serialize(),
+                success: function (data) {
+                    $('#cubo-vendedores').html(data);
+                    $.unblockUI();
+                }
+            });
         } else {
             swal("¡Error!", "Seleccione Rango de Fechas", "error");
         }
