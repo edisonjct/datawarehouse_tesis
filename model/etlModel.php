@@ -39,7 +39,7 @@ class etlModel extends Modelo {
         $num2 = 1000;
         $query = "SELECT p.ID as codigo,p.codigo as barras,p.titulo as titulo,p.costo as costo,p.pvp as pvp,p.iva as iva,p.descuento as descuento,p.tipo as tipo_producto,p.ubicacion as ubicacion,c.nombre as categoria,
         a.nombres as autor,e.razon as editorial,i.nombre as idioma,dp.destino as provedor,dp.localidad as pais,dp.tipo_provedor as tipo_provedor,
-        p.cdi,p.wb,p.jrd,p.sl,p.cnd,p.scl,p.vl,p.ev,p.qc,p.snl,p.snm,p.cm,p.pcf,p.man,p.estado as estado
+        p.cdi,p.wb,p.jrd,p.sl,p.cnd,p.scl,p.vl,p.ev,p.qc,p.snl,p.snm,p.cm,p.pcf,p.man,p.estado,p.fecha_venta as estado
         FROM dw_productos AS p
         LEFT JOIN data_mart_provedores AS dp ON p.provedor = dp.cod_destino
         LEFT JOIN dw_categoria_productos AS c ON p.categoria = c.ID

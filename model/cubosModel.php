@@ -232,5 +232,17 @@ class cubosModel extends Modelo {
         $result->free();
         return $array;
     }
+    
+    public function sel_grafico_productos($desde, $hasta) {
+        $query = "";
+        ocon($query);
+        $result = $this->db->query($query);
+        $array = '';
+        while ($row = $result->fetch_object()) {
+            $array[] = $row;
+        }
+        $result->free();
+        return $array;
+    }
 
 }

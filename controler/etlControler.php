@@ -53,7 +53,7 @@ switch ($proceso) {
                             . ",'" . evaluar($row->autor) . "','" . evaluar($row->editorial) . "','" . evaluar($row->idioma) . "','" . evaluar($row->provedor) . "','" . evaluar($row->pais) . "'"
                             . ",'" . evaluar($row->tipo_provedor) . "','" . $row->cdi . "','" . $row->wb . "','" . $row->jrd . "','" . $row->sl . "'"
                             . ",'" . $row->cnd . "','" . $row->scl . "','" . $row->vl . "','" . $row->ev . "','" . $row->qc . "'"
-                            . ",'" . $row->snl . "','" . $row->snm . "','" . $row->cm . "','" . $row->pcf . "','" . $row->man . "','" . $row->estado . "'),";
+                            . ",'" . $row->snl . "','" . $row->snm . "','" . $row->cm . "','" . $row->pcf . "','" . $row->man . "','" . $row->estado . "','" . $row->fecha_venta . "'),";
                 }
                 $array = substr($array, 0, -1);
                 $insert = $etlModel->insert_tabla('data_mart_productos', $array);

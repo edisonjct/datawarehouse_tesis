@@ -228,7 +228,8 @@ class dtsModel extends Modelo {
         p.cm,
         p.pcf,
         p.man,
-        p.estado as estado
+        p.estado as estado,
+        p.fecha_venta
         FROM
         dw_productos AS p
         LEFT JOIN data_mart_provedores AS dp ON p.provedor = dp.cod_destino

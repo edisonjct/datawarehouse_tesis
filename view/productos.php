@@ -47,7 +47,7 @@ if (!$_SESSION['id']) {
                             <div class="col-md-12 col-xs-12">
                                 <div class="x_panel">
                                     <div class="x_title">
-                                        <h2>CUBO DE VENDEDORES</h2>
+                                        <h2>CUBO DE PRODUCTOS</h2>
                                         <ul class="nav navbar-right panel_toolbox">
                                             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>                                            
                                             <li><a class="close-link"><i class="fa fa-close"></i></a></li>
@@ -57,9 +57,9 @@ if (!$_SESSION['id']) {
                                     <div class="x_content">
                                         <br />
                                         <form id="cubo" class="form-horizontal form-label-left">                                          
-                                            <input type="text" class="hidden" name="proceso" value="vendedores" />
+                                            <input type="text" class="hidden" name="proceso" value="productos" />
                                             <div class="form-group">
-                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Fechas</label>
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Rango de Fechas de Compras</label>
                                                 <div class="col-sm-6">
                                                     <div class="input-daterange input-group" id="datepicker">
                                                         <span class="input-group-addon">Desde</span>
@@ -73,7 +73,7 @@ if (!$_SESSION['id']) {
                                             <div class="form-group">
                                                 <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
                                                     <button type="button" class="btn btn-primary">Cancelar</button>                                                    
-                                                    <button type="button" id="btn-vendedores" class="btn btn-success">Procesar</button>
+                                                    <button type="button" id="btn-productos" class="btn btn-success">Procesar</button>
                                                 </div>
                                             </div>
                                         </form>

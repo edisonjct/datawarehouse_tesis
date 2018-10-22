@@ -507,8 +507,78 @@ switch ($_POST['proceso']) {
 
         break;
 
-    case 'productos':
-
+    case 'productos':        
+        $desde = $_POST['start'];
+        $hasta = $_POST['end'];
+        $result = $cubo->sel_grafico_vendedores($desde, $hasta);
+        $array_nombre = '';
+        $array_facturas = '';
+        $array_libros = '';
+        $array_venta = '';
+        foreach ($result as $row) {
+        $array_nombre .= "'" . $row->vendedor . "',";
+        $array_facturas .= number_format($row->facturas, 0, '', '') . ',';
+        $array_libros .= number_format($row->cantidad, 0, '', '') . ',';
+        $array_venta .= number_format($row->pvp, 0, '', '') . ',';
+        }
+        ?>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">                        
+                <div class="x_panel">                                                       
+                    <div class="x_content">
+                        <div id="main" style="height:350px;"></div>
+                    </div>
+                </div>
+            </div>                    
+        </div>
+        <script>
+            var myChart = echarts.init(document.getElementById('main'));
+            var option = {
+                title: {text: 'Grafico de Ventas de Productos', subtext: 'Top 10 Productos mas Vendidos'},
+                tooltip: {trigger: 'axis', axisPointer: {type: 'shadow'}},
+                legend: {data: ['Facturas', 'Libros', 'Venta']},
+                toolbox: {
+                    show: true,
+                    feature: {
+                        mark: {show: true},
+                        dataView: {show: true, readOnly: false},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                xAxis: [{type: 'category', data: [<?= $array_nombre; ?>]}],
+                yAxis: [{type: 'value'}],
+                series: [
+                    {
+                        name: 'Facturas',
+                        type: 'bar',
+                        data: [<?= $array_facturas; ?>]
+                    },
+                    {
+                        name: 'Libros',
+                        type: 'bar',
+                        data: [<?= $array_libros; ?>]
+                    },
+                    {
+                        name: 'Venta',
+                        type: 'bar',
+                        data: [<?= $array_venta; ?>],
+                        markLine: {
+                            lineStyle: {
+                                normal: {
+                                    type: 'dashed'
+                                }
+                            },
+                            data: [
+                                [{type: 'min'}, {type: 'max'}]
+                            ]
+                        }
+                    }
+                ]
+            };
+            myChart.setOption(option);
+        </script>
+        <?
         break;
 
     case 'provedores':
@@ -518,7 +588,6 @@ switch ($_POST['proceso']) {
     case 'vendedores':
         $desde = $_POST['start'];
         $hasta = $_POST['end'];
-        //////////////////////////
         $result = $cubo->sel_grafico_vendedores($desde, $hasta);
         $array_nombre = '';
         $array_facturas = '';
@@ -531,7 +600,6 @@ switch ($_POST['proceso']) {
             $array_venta .= number_format($row->pvp, 0, '', '') . ',';
         }
         ?>
-
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">                        
                 <div class="x_panel">                                                       
