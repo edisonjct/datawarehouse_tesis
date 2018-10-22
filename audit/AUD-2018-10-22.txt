@@ -60,3 +60,609 @@ SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
 FECHA: 2018-10-22 09:23:58 El usuario EDISON CHULDE ejecuto:
 SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
 
+FECHA: 2018-10-22 09:42:27 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 09:42:27', 'ligas_app_backup_20181022-094227.zip', '1', '1');
+
+FECHA: 2018-10-22 09:43:02 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 09:43:02', 'ligas_app_backup_20181022-094302.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 09:43:24 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 09:43:24', 'ligas_app_backup_20181022-094324.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 09:43:26 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 09:43:26', 'ligas_app_backup_20181022-094326.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 09:43:27 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 09:43:27', 'ligas_app_backup_20181022-094327.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 09:43:29 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 09:43:29', 'ligas_app_backup_20181022-094329.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:16:48 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:16:50 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:17:43 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:17:45 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:18:42 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:18:42', 'ligas_app_backup_20181022-101842.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:18:43 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:18:59 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:18:59', 'ligas_app_backup_20181022-101859.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:19:00 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:19:48 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:19:50 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:19:52 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:19:52', 'ligas_app_backup_20181022-101952.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:19:53 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:29:28 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:29:30 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:29:33 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:29:33', 'ligas_app_backup_20181022-102933.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:29:34 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:30:47 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:30:49 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:30:51 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:30:51', 'ligas_app_backup_20181022-103051.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:31:03 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:31:03', 'ligas_app_backup_20181022-103103.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:31:40 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:31:43 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:31:50 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:31:52 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:31:55 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:31:55', 'ligas_app_backup_20181022-103155.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:32:20 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:32:23 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:32:25 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:32:25', 'ligas_app_backup_20181022-103225.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:32:42 El usuario  ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:32:49 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-22 10:32:49', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-22 10:32:51 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_provedores;
+
+FECHA: 2018-10-22 10:32:51 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_clientes;
+
+FECHA: 2018-10-22 10:32:52 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_productos;
+
+FECHA: 2018-10-22 10:32:52 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM dw_usuario;
+
+FECHA: 2018-10-22 10:32:52 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:32:52 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2017' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 10:32:52 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2018' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 10:32:52 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2017' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 10:32:52 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2018' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 10:33:02 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:33:05 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:33:14 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:33:13', 'ligas_app_backup_20181022-103313.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:33:15 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:33:22 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:33:22', 'ligas_app_backup_20181022-103322.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:33:23 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:33:38 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:33:38', 'ligas_app_backup_20181022-103338.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:33:39 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:33:50 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:33:50', 'ligas_app_backup_20181022-103350.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:33:52 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:34:29 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:34:31 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:34:37 El usuario  ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:34:44 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-22 10:34:44', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-22 10:34:46 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_provedores;
+
+FECHA: 2018-10-22 10:34:46 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_clientes;
+
+FECHA: 2018-10-22 10:34:46 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_productos;
+
+FECHA: 2018-10-22 10:34:47 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM dw_usuario;
+
+FECHA: 2018-10-22 10:34:47 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:34:47 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2017' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 10:34:47 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2018' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 10:34:47 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2017' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 10:34:47 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2018' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 10:34:50 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:34:52 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:34:58 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:34:58', 'ligas_app_backup_20181022-103458.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:34:59 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:35:04 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:35:04', 'ligas_app_backup_20181022-103504.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:35:05 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:35:48 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:35:50 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:35:52 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:35:52', 'ligas_app_backup_20181022-103552.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:35:53 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:36:21 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:36:22 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:36:24 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:36:24', 'ligas_app_backup_20181022-103624.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:36:25 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:36:40 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:36:40', 'ligas_app_backup_20181022-103640.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:36:41 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:37:21 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 10:37:21', 'ligas_app_backup_20181022-103721.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 10:37:22 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:38:03 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:38:05 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:38:27 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:38:29 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 10:39:30 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 10:39:31 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:21:24 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:21:26 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:22:57 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:22:59 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:24:53 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:24:55 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:25:14 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:25:16 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:25:30 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:25:32 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:26:48 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:26:49 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:26:59 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 11:26:59', 'ligas_app_backup_20181022-112659.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 11:27:00 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:27:12 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:27:26 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:27:28 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:28:16 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:29:10 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:29:12 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:29:33 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 11:29:33', 'ligas_app_backup_20181022-112933.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 11:29:34 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:41:25 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 11:41:25', 'ligas_app_backup_20181022-114125.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 11:41:26 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:42:02 El usuario  ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:42:08 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-22 11:42:08', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-22 11:42:09 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_provedores;
+
+FECHA: 2018-10-22 11:42:10 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_clientes;
+
+FECHA: 2018-10-22 11:42:11 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_productos;
+
+FECHA: 2018-10-22 11:42:11 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM dw_usuario;
+
+FECHA: 2018-10-22 11:42:11 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:42:11 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2017' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 11:42:11 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2018' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 11:42:11 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2017' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 11:42:11 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2018' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 11:42:16 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:42:17 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:42:30 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE (id='3') LIMIT 1;
+
+FECHA: 2018-10-22 11:42:30 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_backups WHERE (id='3');
+
+FECHA: 2018-10-22 11:42:31 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:42:48 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 11:42:48', 'ligas_app_backup_20181022-114248.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 11:42:49 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:42:57 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE (id='4') LIMIT 1;
+
+FECHA: 2018-10-22 11:42:57 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_backups WHERE (id='4');
+
+FECHA: 2018-10-22 11:42:59 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:43:27 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:43:30 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:43:33 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 11:43:33', 'ligas_app_backup_20181022-114333.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 11:43:35 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:43:47 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE (id='5') LIMIT 1;
+
+FECHA: 2018-10-22 11:43:47 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_backups WHERE (id='5');
+
+FECHA: 2018-10-22 11:43:48 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:44:20 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:44:22 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:44:26 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 11:44:26', 'ligas_app_backup_20181022-114426.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 11:44:27 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:46:02 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:46:04 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:46:06 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 11:46:06', 'ligas_app_backup_20181022-114606.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 11:46:07 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:46:45 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:46:46 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:47:21 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:47:23 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:47:28 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE (id='2') LIMIT 1;
+
+FECHA: 2018-10-22 11:47:28 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_backups WHERE (id='2');
+
+FECHA: 2018-10-22 11:47:29 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:47:46 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:47:48 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:47:50 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 11:47:50', 'ligas_app_backup_20181022-114750.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 11:47:51 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:48:18 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 11:48:18', 'ligas_app_backup_20181022-114818.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 11:48:19 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:48:33 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE (id='4') LIMIT 1;
+
+FECHA: 2018-10-22 11:48:33 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_backups WHERE (id='4');
+
+FECHA: 2018-10-22 11:48:35 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:49:26 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:49:28 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:49:30 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 11:49:30', 'ligas_app_backup_20181022-114930.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 11:49:32 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:49:43 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE (id='1') LIMIT 1;
+
+FECHA: 2018-10-22 11:49:43 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_backups WHERE (id='1');
+
+FECHA: 2018-10-22 11:49:44 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:50:45 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 11:50:47 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:50:49 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('2018-10-22 11:50:49', 'ligas_app_backup_20181022-115049.zip', 'EDISON CHULDE', '1');
+
+FECHA: 2018-10-22 11:50:50 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+
+FECHA: 2018-10-22 11:51:07 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE (id='2') LIMIT 1;
+
+FECHA: 2018-10-22 11:51:07 El usuario EDISON CHULDE ejecuto:
+DELETE FROM dw_backups WHERE (id='2');
+
+FECHA: 2018-10-22 11:51:08 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_backups WHERE estado != '9';
+

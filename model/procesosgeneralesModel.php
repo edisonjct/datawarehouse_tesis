@@ -21,4 +21,36 @@ class procesosgeneralesModel extends Modelo {
         parent::__construct();
     }
 
+    public function add_backup($fecha, $nombre, $usuario, $estado) {
+        $query = "INSERT INTO dw_backups (fecha, nombre, usuario, estado) VALUES ('$fecha', '$nombre', '$usuario', '$estado');";
+        ocon($query);
+        $result = $this->db->query($query);
+        return $result;
+    }
+
+    public function sel_backup() {
+        $query = "SELECT * FROM dw_backups WHERE estado != '9';";
+        ocon($query);
+        $result = $this->db->query($query);
+        $array = '';
+        while ($row = $result->fetch_object()) {
+            $array[] = $row;
+        }
+        return $array;
+    }
+
+    public function delete_backup($id) {
+        $query = "DELETE FROM dw_backups WHERE (id='$id');";
+        ocon($query);
+        $result = $this->db->query($query);
+        return $result;
+    }
+
+    public function sel_backup_by_id($id) {
+        $query = "SELECT * FROM dw_backups WHERE (id='$id') LIMIT 1;";
+        ocon($query);
+        $result = $this->db->query($query);
+        return $result->fetch_object();
+    }
+
 }
