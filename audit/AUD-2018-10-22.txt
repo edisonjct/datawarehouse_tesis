@@ -1,3 +1,62 @@
 FECHA: 2018-10-22 00:00:19 El usuario EDISON CHULDE ejecuto:
 SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
 
+FECHA: 2018-10-22 09:20:29 El usuario  ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 09:20:38 El usuario EDISON CHULDE ejecuto:
+INSERT INTO dw_bitacora (fecha, usuario, ip ,navegador , sistema) VALUES ('2018-10-22 09:20:38', 'echulde', '::1', 'Google Chrome','Windows 7');
+
+FECHA: 2018-10-22 09:20:39 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_provedores;
+
+FECHA: 2018-10-22 09:20:40 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_clientes;
+
+FECHA: 2018-10-22 09:20:40 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM data_mart_productos;
+
+FECHA: 2018-10-22 09:20:41 El usuario EDISON CHULDE ejecuto:
+SELECT count(*) as max FROM dw_usuario;
+
+FECHA: 2018-10-22 09:20:41 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 09:20:41 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2017' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 09:20:41 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2018' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 09:20:41 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2017' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 09:20:41 El usuario EDISON CHULDE ejecuto:
+SELECT *
+        FROM
+        dw_totales_anio
+        INNER JOIN dw_bodegas  ON dw_totales_anio.bodega = dw_bodegas.nombre
+        WHERE anio = '2018' AND estado = '1'
+        ORDER BY orden ASC;
+
+FECHA: 2018-10-22 09:20:57 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+
+FECHA: 2018-10-22 09:23:58 El usuario EDISON CHULDE ejecuto:
+SELECT * FROM dw_usuario where ID_USUARIO = '1' AND estado = 1 LIMIT 1
+

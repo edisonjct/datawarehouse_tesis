@@ -83,6 +83,6 @@ $mes = date("m");
         <script src="vendors/nprogress/nprogress.js"></script>        
         <script src="build/js/custom.js"></script>
         <script src="vendors/sweetalert/sweetalert2.all.min.js"></script>
-        <script src="js/backup.js"></script>
+        <script src="js/procesosgenerales.js"></script>
     </body>
 </html>
